@@ -1,0 +1,130 @@
+// Core variables and mixins
+@import "../../lib/bootstrap-3.3.2/less/variables.less";
+@import "../../lib/bootstrap-3.3.2/less/mixins.less";
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+body{
+	font-family: 'Open Sans', sans-serif;
+	font-style: normal;
+	font-weight: 300;
+}
+
+ul{
+	padding: 0;
+	li{
+		list-style: none;
+	}
+}
+a{
+	&:hover,
+	&:focus,
+	&:active{
+		text-decoration: none;
+	}
+}
+
+h1, h2, h3, h4, h5, h6{
+	font-weight: inherit;
+}
+
+#home{
+	header{
+		background-color: #007297;
+		.container{
+			height: 500px;
+			background: url("../../img/header.png") no-repeat;
+		}
+		
+		nav{
+			ul{
+				li{
+					float: left;
+					a{
+						color: #fff;
+						text-align: center;
+						height: 75px;
+						display: block;
+						margin: 0 10px;
+					}
+				}
+			}
+		}
+		
+		#page-title{
+			color: #fff;
+		}
+		.add{
+			border-radius: 100px;
+			font-size: 36px;
+			padding: 18px;
+			line-height: 20px;
+			float: right;
+			margin-top: -40px;
+		}
+	}
+}
+
+#sectionProjects{
+	padding-top: 45px;
+	.project-item{
+		margin-top: 50px;
+		.item-header{
+			position: absolute;
+			top: -50px;
+			width: 100%;
+			z-index: 10;
+			.owner-img{
+				border: 2px solid @brand-primary;
+				border-radius: 100px;
+				background-color: #fff;
+				padding: 3px;
+				float: left;
+				margin-bottom: -30px;
+			}
+			.owner-name{
+				color: @brand-primary;
+				float: left;
+				font-size: 20px;
+				margin-top: 20px;
+				margin-left: 10px;
+			}
+			.count-likes{
+				float: right;
+				margin-top: 20px;
+				margin-right: 30px;
+				li{
+					display: inline-block;
+					font-size: 16px;
+					img{
+						margin: 2px 5px;
+					}
+				}
+			}
+		}
+		.title{
+			font-size: 22px;
+			float: left;
+			width: 70%;
+		}
+		.actions{
+			position: absolute;
+			right: 25px;
+			margin-top: -30px;
+			li{
+				display: inline-block;
+				a{
+					border-radius: 100px;
+					padding: 15px 19px;
+				}
+			}
+		}
+	}
+}
+
+footer{
+	text-align: center;
+	background-color: #E8E8EC;
+	margin-top: 25px;
+	padding: 10px;
+}
