@@ -37,7 +37,9 @@ h1, h2, h3, h4, h5, h6{
 		}
 		
 		nav{
+			text-align: center;
 			ul{
+				display: inline-block;
 				li{
 					float: left;
 					a{
@@ -45,23 +47,24 @@ h1, h2, h3, h4, h5, h6{
 						text-align: center;
 						height: 75px;
 						display: block;
-						margin: 0 10px;
+						margin: 10px;
+						i{
+							font-size: 28px;
+						}
 					}
 				}
 			}
 		}
-		
-		#page-title{
-			color: #fff;
-		}
-		.add{
-			border-radius: 100px;
-			font-size: 36px;
-			padding: 18px;
-			line-height: 20px;
-			float: right;
-			margin-top: -40px;
-		}
+	}
+}
+
+#titleBar{
+	.page-title{
+		margin: 10px 0;
+	}
+	.add{
+		float: right;
+		margin-top: -45px;
 	}
 }
 
@@ -75,6 +78,8 @@ h1, h2, h3, h4, h5, h6{
 			width: 100%;
 			z-index: 10;
 			.owner-img{
+				width: 65px;
+				height: 65px;
 				border: 2px solid @brand-primary;
 				border-radius: 100px;
 				background-color: #fff;
@@ -96,26 +101,26 @@ h1, h2, h3, h4, h5, h6{
 				li{
 					display: inline-block;
 					font-size: 16px;
-					img{
-						margin: 2px 5px;
-					}
+					margin-left: 10px;
+					color: #8E8E8E;
 				}
 			}
 		}
 		.title{
-			font-size: 22px;
+			font-size: 20px;
 			float: left;
 			width: 70%;
 		}
 		.actions{
 			position: absolute;
-			right: 25px;
+			right: 20px;
 			margin-top: -30px;
 			li{
 				display: inline-block;
 				a{
 					border-radius: 100px;
-					padding: 15px 19px;
+					padding: 15px 13px;
+					margin-left: 5px;
 				}
 			}
 		}
