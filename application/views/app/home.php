@@ -115,6 +115,7 @@
         
         <section id="sectionProjects">
             <div class="container">
+                
                 <div class="project-item col-md-6">
                     <div class="clearfix"></div>
                     <div class="item-header">
@@ -126,6 +127,330 @@
                             </li>
                             <li>
                             	<i class="fa fa-minus-circle"></i>75
+                            </li>
+                        </ul>
+                     </div>
+                     
+                     <div id="carousel_01" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel_01" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel_01" data-slide-to="1"></li>
+                            <li data-target="#carousel_01" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item active">
+                                <img src="<?php echo base_url('img/img-project-sample.png'); ?>">
+                            </div>
+                            <div class="item">
+                                <img src="<?php echo base_url('img/img-project-sample.png'); ?>">
+                            </div>
+                            <div class="item">
+                                <img src="<?php echo base_url('img/img-project-sample.png'); ?>">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="title">Substituição dos banco da praça da bandeira</div>
+                    <ul class="actions">
+                        <li>
+                            <a href="#" class="btn btn-success">
+                                <span class="spin">
+                                    <i class="fa fa-plus"></i> 1
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn btn-danger">
+                                <span class="spin">
+                                    <i class="fa fa-minus"></i> 1
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                
+                <div class="project-item col-md-6">
+                    <div class="clearfix"></div>
+                    <div class="item-header">
+                        <img class="owner-img" src="<?php echo base_url('img/user-img_med.png'); ?>" />
+                        <div class="owner-name">Marcelo Ferreira</div>
+                        <ul class="count-likes">
+                            <li>
+                                31<i class="fa fa-plus-circle"></i>
+                            </li>
+                            <li>
+                                <i class="fa fa-minus-circle"></i>75
+                            </li>
+                        </ul>
+                     </div>
+                     
+                     <div id="carousel_01" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel_01" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel_01" data-slide-to="1"></li>
+                            <li data-target="#carousel_01" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item active">
+                                <img src="<?php echo base_url('img/img-project-sample.png'); ?>">
+                            </div>
+                            <div class="item">
+                                <img src="<?php echo base_url('img/img-project-sample.png'); ?>">
+                            </div>
+                            <div class="item">
+                                <img src="<?php echo base_url('img/img-project-sample.png'); ?>">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="title">Substituição dos banco da praça da bandeira</div>
+                    <ul class="actions">
+                        <li>
+                            <a href="#" class="btn btn-success">
+                                <span class="spin">
+                                    <i class="fa fa-plus"></i> 1
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn btn-danger">
+                                <span class="spin">
+                                    <i class="fa fa-minus"></i> 1
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                
+                <div class="project-item col-md-6">
+                    <div class="clearfix"></div>
+                    <div class="item-header">
+                        <img class="owner-img" src="<?php echo base_url('img/user-img_med.png'); ?>" />
+                        <div class="owner-name">Marcelo Ferreira</div>
+                        <ul class="count-likes">
+                            <li>
+                                31<i class="fa fa-plus-circle"></i>
+                            </li>
+                            <li>
+                                <i class="fa fa-minus-circle"></i>75
+                            </li>
+                        </ul>
+                     </div>
+                     
+                     <div id="carousel_01" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel_01" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel_01" data-slide-to="1"></li>
+                            <li data-target="#carousel_01" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item active">
+                                <img src="<?php echo base_url('img/img-project-sample.png'); ?>">
+                            </div>
+                            <div class="item">
+                                <img src="<?php echo base_url('img/img-project-sample.png'); ?>">
+                            </div>
+                            <div class="item">
+                                <img src="<?php echo base_url('img/img-project-sample.png'); ?>">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="title">Substituição dos banco da praça da bandeira</div>
+                    <ul class="actions">
+                        <li>
+                            <a href="#" class="btn btn-success">
+                                <span class="spin">
+                                    <i class="fa fa-plus"></i> 1
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn btn-danger">
+                                <span class="spin">
+                                    <i class="fa fa-minus"></i> 1
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                
+                <div class="project-item col-md-6">
+                    <div class="clearfix"></div>
+                    <div class="item-header">
+                        <img class="owner-img" src="<?php echo base_url('img/user-img_med.png'); ?>" />
+                        <div class="owner-name">Marcelo Ferreira</div>
+                        <ul class="count-likes">
+                            <li>
+                                31<i class="fa fa-plus-circle"></i>
+                            </li>
+                            <li>
+                                <i class="fa fa-minus-circle"></i>75
+                            </li>
+                        </ul>
+                     </div>
+                     
+                     <div id="carousel_01" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel_01" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel_01" data-slide-to="1"></li>
+                            <li data-target="#carousel_01" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item active">
+                                <img src="<?php echo base_url('img/img-project-sample.png'); ?>">
+                            </div>
+                            <div class="item">
+                                <img src="<?php echo base_url('img/img-project-sample.png'); ?>">
+                            </div>
+                            <div class="item">
+                                <img src="<?php echo base_url('img/img-project-sample.png'); ?>">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="title">Substituição dos banco da praça da bandeira</div>
+                    <ul class="actions">
+                        <li>
+                            <a href="#" class="btn btn-success">
+                                <span class="spin">
+                                    <i class="fa fa-plus"></i> 1
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn btn-danger">
+                                <span class="spin">
+                                    <i class="fa fa-minus"></i> 1
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                
+                <div class="project-item col-md-6">
+                    <div class="clearfix"></div>
+                    <div class="item-header">
+                        <img class="owner-img" src="<?php echo base_url('img/user-img_med.png'); ?>" />
+                        <div class="owner-name">Marcelo Ferreira</div>
+                        <ul class="count-likes">
+                            <li>
+                                31<i class="fa fa-plus-circle"></i>
+                            </li>
+                            <li>
+                                <i class="fa fa-minus-circle"></i>75
+                            </li>
+                        </ul>
+                     </div>
+                     
+                     <div id="carousel_01" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel_01" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel_01" data-slide-to="1"></li>
+                            <li data-target="#carousel_01" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item active">
+                                <img src="<?php echo base_url('img/img-project-sample.png'); ?>">
+                            </div>
+                            <div class="item">
+                                <img src="<?php echo base_url('img/img-project-sample.png'); ?>">
+                            </div>
+                            <div class="item">
+                                <img src="<?php echo base_url('img/img-project-sample.png'); ?>">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="title">Substituição dos banco da praça da bandeira</div>
+                    <ul class="actions">
+                        <li>
+                            <a href="#" class="btn btn-success">
+                                <span class="spin">
+                                    <i class="fa fa-plus"></i> 1
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn btn-danger">
+                                <span class="spin">
+                                    <i class="fa fa-minus"></i> 1
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                
+                <div class="project-item col-md-6">
+                    <div class="clearfix"></div>
+                    <div class="item-header">
+                        <img class="owner-img" src="<?php echo base_url('img/user-img_med.png'); ?>" />
+                        <div class="owner-name">Marcelo Ferreira</div>
+                        <ul class="count-likes">
+                            <li>
+                                31<i class="fa fa-plus-circle"></i>
+                            </li>
+                            <li>
+                                <i class="fa fa-minus-circle"></i>75
+                            </li>
+                        </ul>
+                     </div>
+                     
+                     <div id="carousel_01" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel_01" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel_01" data-slide-to="1"></li>
+                            <li data-target="#carousel_01" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item active">
+                                <img src="<?php echo base_url('img/img-project-sample.png'); ?>">
+                            </div>
+                            <div class="item">
+                                <img src="<?php echo base_url('img/img-project-sample.png'); ?>">
+                            </div>
+                            <div class="item">
+                                <img src="<?php echo base_url('img/img-project-sample.png'); ?>">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="title">Substituição dos banco da praça da bandeira</div>
+                    <ul class="actions">
+                        <li>
+                            <a href="#" class="btn btn-success">
+                                <span class="spin">
+                                    <i class="fa fa-plus"></i> 1
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn btn-danger">
+                                <span class="spin">
+                                    <i class="fa fa-minus"></i> 1
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                
+                <div class="project-item col-md-6">
+                    <div class="clearfix"></div>
+                    <div class="item-header">
+                        <img class="owner-img" src="<?php echo base_url('img/user-img_med.png'); ?>" />
+                        <div class="owner-name">Marcelo Ferreira</div>
+                        <ul class="count-likes">
+                            <li>
+                                31<i class="fa fa-plus-circle"></i>
+                            </li>
+                            <li>
+                                <i class="fa fa-minus-circle"></i>75
                             </li>
                         </ul>
                      </div>
