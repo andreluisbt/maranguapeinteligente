@@ -75,13 +75,6 @@
                 </div>
                 <nav>
                     <ul>
-                    	<!--
-                        <li>
-                            <a href="#">
-                                <img src="<?php echo base_url('img/logo.png'); ?>" />
-                            </a>
-                        </li>
-                       -->
                         <li>
                             <a href="#">
                                 <i class="fa fa-clock-o"></i>
@@ -107,7 +100,6 @@
         
         <div id="titleBar" class="container">
 	        <h2 class="page-title">
-                <i class="fa fa-clock-o"></i>
                 Últimos projetos
 	        </h2>
 	        <a href="#" class="add btn btn-success"><i class="fa fa-plus"></i> Enviar novo projeto</a>
