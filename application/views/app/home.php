@@ -149,7 +149,10 @@
                         </div>
                     </div>
                     
-                    <div class="title">Substituição dos banco da praça da bandeira</div>
+                    <div class="title">
+                    	<a href="#">
+	                    	Substituição dos banco da praça da bandeira</div>
+                    	</a>
                     <ul class="actions">
                         <li>
                             <a href="#" class="btn btn-success">
