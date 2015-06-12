@@ -28,12 +28,70 @@ h1, h2, h3, h4, h5, h6{
 	font-weight: inherit;
 }
 
+
+.btn,
+a{
+
+	transition: all .5s ease;	
+	-webkit-transition: all .5s ease;
+	-moz-transition: all .5s ease;
+	-ms-transition: all .5s ease;
+	-o-transition: all .5s ease;
+	
+	.spin{
+		transition: all .5s ease;	
+		-webkit-transition: all .5s ease;
+		-moz-transition: all .5s ease;
+		-ms-transition: all .5s ease;
+		-o-transition: all .5s ease;
+	}
+	
+	&:hover,
+	&:focus{
+		.spin{
+			transform: rotate(360deg);
+			-webkit-transform: rotate(360deg);
+			-moz-traform: rotate(360deg);
+			-ms-traform: rotate(360deg);
+			-o-traform: rotate(360deg);
+		}
+	}
+}
+
 #home{
 	header{
-		background-color: #007297;
-		.container{
-			height: 500px;
-			background: url("../../img/header.png") no-repeat;
+		background: #007297 url("../../img/header.png") no-repeat;
+		background-position: center top;
+		padding-top: 10px;
+		
+		#login{
+			form{
+				input{
+					background: transparent;
+					border: 1px solid #fff;
+					&::-webkit-input-placeholder{ color: #fff;}
+					&::-moz-placeholder{ color: #fff;}
+				}
+				button{
+					border-radius: 100px;
+				}
+			}
+			a{
+				color: #fff;
+				padding: 5px 10px 5px 0;
+  				display: inline-block;
+  				i{
+  					margin-right: 7px;
+  				}
+			}
+		}
+		
+		.text{
+			text-align: center;
+			padding: 50px;
+			color: #fff;
+			font-size: 22px;
+			min-height: 200px;
 		}
 		
 		nav{
@@ -45,11 +103,16 @@ h1, h2, h3, h4, h5, h6{
 					a{
 						color: #fff;
 						text-align: center;
-						height: 75px;
+						height: 55px;
 						display: block;
 						margin: 10px;
+						padding: 5px;
 						i{
 							font-size: 28px;
+						}
+						&:hover,
+						&:focus{
+							background-color: rgba(0, 0, 0, 0.3);
 						}
 					}
 				}
@@ -61,6 +124,7 @@ h1, h2, h3, h4, h5, h6{
 #titleBar{
 	.page-title{
 		margin: 10px 0;
+		padding-left: 10px;
 	}
 	.add{
 		float: right;
@@ -69,9 +133,9 @@ h1, h2, h3, h4, h5, h6{
 }
 
 #sectionProjects{
-	padding-top: 45px;
+	padding-top: 20px;
 	.project-item{
-		margin-top: 50px;
+		margin-top: 65px;
 		.item-header{
 			position: absolute;
 			top: -50px;
@@ -101,8 +165,10 @@ h1, h2, h3, h4, h5, h6{
 				li{
 					display: inline-block;
 					font-size: 16px;
-					margin-left: 10px;
 					color: #8E8E8E;
+					i{
+						margin: 0 5px;
+					}
 				}
 			}
 		}
@@ -111,6 +177,14 @@ h1, h2, h3, h4, h5, h6{
 			float: left;
 			width: 70%;
 		}
+		.carousel{
+			.carousel-inner{
+				img{
+					width: 100%;
+				}
+			}
+		}
+		
 		.actions{
 			position: absolute;
 			right: 20px;
