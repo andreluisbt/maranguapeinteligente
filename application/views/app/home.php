@@ -64,10 +64,10 @@
     							</span>
     						</button>
     					</form>
-    					<a href="#">
+    					<a href="<?php echo site_url('app/signup'); ?>" data-toggle="modal" data-target="#generalModal">
     					   <i class="fa fa-user"></i>Cadastre-se
     					</a>
-    					<a href="#">
+    					<a href="<?php echo site_url('app/forgotpassword'); ?>" data-toggle="modal" data-target="#generalModal">
     					   <i class="fa fa-unlock-alt"></i>Esqueci a senha
                         </a>
                     </div>
@@ -185,6 +185,21 @@
                 © 2014 SuaCidade. Todos os direiros reservados
             </div>
         </footer>
+        
+       	<div id="generalModal" class="modal fade">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-body">
+						<div class="preload">
+							<span class="bar bar-1"></span>
+							<span class="bar bar-2"></span>
+							<span class="bar bar-3"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
         
     </body>
 </html>

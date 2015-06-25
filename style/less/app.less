@@ -58,6 +58,49 @@ a{
 	}
 }
 
+
+.preload{
+	text-align: center;
+	.bar{
+		width: 6px;
+		height: 8px;
+		background-color: #232D33;
+		display: inline-block;
+		-webkit-animation: preload 0.8s linear infinite;
+		-moz-animation: preload 0.8s linear infinite;
+		-ms-animation: preload 0.8s linear infinite;
+
+		margin-left: 1px;
+		margin-right: 1px;
+		
+		&.bar-2{
+			-webkit-animation-delay: 0.266s;
+			-moz-animation-delay: 0.266s;
+			-ms-animation-delay: 0.266s;
+		}
+		&.bar-3{
+			-webkit-animation-delay: 0.532s;
+			-moz-animation-delay: 0.532s;
+			-ms-animation-delay: 0.532s;
+		}
+	}
+	@-webkit-keyframes preload{
+		0%{ -webkit-transform: scaleY(1);}
+		50%{ -webkit-transform: scaleY(3);}
+		100%{ -webkit-transform: scaleY(1);}
+	}
+	@-moz-keyframes preload{
+		0%{ -moz-transform: scaleY(1);}
+		50%{ -moz-transform: scaleY(3);}
+		100%{ -moz-transform: scaleY(1);}
+	}
+	@-ms-keyframes preload{
+		0%{ -ms-transform: scaleY(1);}
+		50%{ -ms-transform: scaleY(3);}
+		100%{ -ms-transform: scaleY(1);}
+	}
+}
+
 #home{
 	header{
 		background: #007297 url("../../img/header.png") no-repeat;

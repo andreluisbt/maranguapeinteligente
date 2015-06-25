@@ -32,5 +32,13 @@ class App extends CI_Controller {
         }
         echo json_encode($r);
     }
+	
+	public function signup(){
+        $this->load->view('app/signup');
+    }
+
+	public function forgotPassword(){
+        $this->load->view('app/forgot_password');
+    }
     
 }
