@@ -1,8 +1,13 @@
 // Core variables and mixins
-@import "../../lib/bootstrap-3.3.2/less/variables.less";
-@import "../../lib/bootstrap-3.3.2/less/mixins.less";
+//@import "../../lib/bootstrap-3.3.2/less/variables.less";
+@import "../../lib/bootstrap-3.3.2/less/bootstrap.less";
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+@border-radius-base: 0px;
+@border-radius-large: 0px;
+@border-radius-small: 0px;
+
 
 body{
 	font-family: 'Open Sans', sans-serif;
@@ -109,18 +114,48 @@ a{
 		
 		#logo{
 			margin-bottom: 20px;
+			@media (max-width: @screen-md-min){
+				text-align: center;	
+			}
 		}
 		
 		#login{
+			
+			@media (min-width: @screen-md){
+				float: right;	
+			}
+			@media (max-width: @screen-md-min){
+				text-align: center;	
+				margin-top: 20px;
+				margin-bottom: 20px;
+			}
+		
 			form{
+				.msg{
+					color: #fff;
+					&.error{
+						i{
+							color: @brand-danger;
+						}
+					}
+				}
 				input{
 					background: transparent;
 					border: 1px solid #fff;
+					color: #fff;
 					&::-webkit-input-placeholder{ color: #fff;}
 					&::-moz-placeholder{ color: #fff;}
 				}
 				button{
 					border-radius: 100px;
+					
+					.preload{
+						.bar{
+							width: 4px;
+							height: 6px;
+							background: #fff;
+						}
+					}
 				}
 			}
 			a{
@@ -130,6 +165,37 @@ a{
   				i{
   					margin-right: 7px;
   				}
+			}
+		}
+		
+		#userBar{
+			ul{
+				li{
+					a{
+						margin: 4px 2px;
+						.user-pic{
+							width: 55px;
+						  	height: 55px;
+						  	border-radius: 100px;
+						  	border: 2px solid #fff;
+						  	padding: 2px;
+						}
+						
+						&.exit{
+							color: #fff;
+							background: @brand-danger;
+							&:hover,
+							&:focus{
+								background: darken(@brand-danger, 20%);
+							}
+						}
+					}
+					
+					.user-dropdown{
+						margin-left: -50px;
+						padding: 5px;
+					}
+				}
 			}
 		}
 		
@@ -174,8 +240,7 @@ a{
 		padding-left: 10px;
 	}
 	.add{
-		float: right;
-		margin-top: -45px;
+		margin-top: 10px;
 	}
 }
 
@@ -201,28 +266,27 @@ a{
 			.owner-name{
 				color: @brand-primary;
 				float: left;
-				font-size: 20px;
+				font-size: 18px;
 				margin-top: 20px;
 				margin-left: 10px;
 			}
-			.count-likes{
-				float: right;
-				margin-top: 20px;
-				margin-right: 30px;
-				li{
-					display: inline-block;
-					font-size: 16px;
-					color: #8E8E8E;
-					i{
-						margin: 0 5px;
-					}
+		}
+		
+		.count-likes{
+			display: inline-block;
+			margin-top: 5px;
+			li{
+				display: inline-block;
+				font-size: 16px;
+				color: #8E8E8E;
+				i{
+					margin: 0 5px;
 				}
 			}
 		}
 		.title{
-			font-size: 20px;
-			float: left;
-			width: 70%;
+			font-size: 22px;
+			text-align: center
 		}
 		.carousel{
 			.carousel-inner{
@@ -235,7 +299,8 @@ a{
 		.actions{
 			position: absolute;
 			right: 20px;
-			margin-top: -30px;
+			margin-top: -65px;
+			
 			li{
 				display: inline-block;
 				a{

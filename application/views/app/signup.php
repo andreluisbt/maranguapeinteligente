@@ -39,7 +39,7 @@
 		</div>
 		<div class="form-group">
 			<label for="cpf">CPF</label>
-			<input type="password" id="cpf" name="cpf" class="form-control" placeholder="Password">
+			<input type="text" id="cpf" name="cpf" class="form-control" placeholder="CPF">
 		</div>
 		
 	</form>

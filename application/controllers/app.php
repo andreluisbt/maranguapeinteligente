@@ -3,36 +3,39 @@
 class App extends CI_Controller {
 	    
     public function index(){
-        
-        /*
-        $tipo = true;
         if($this->session->userdata('user')){
-            if($tipo){
-                $this->template->load('templates/main', 'patient/main');
-            }else{
-                $this->template->load('templates/main', 'doctor/main');
-            }
+           $this->load->view('app/home', array('logged'=>true));
         }else{
-         *
-         */
-        $this->load->view('app/home');
+            $this->load->view('app/home', array('logged'=>false));
+        }
 	}
     
     public function actionLogin(){
-        $email = $this->input->post('email');
-        $password = $this->input->post('password');
+        $username = $this->input->post('loginUser');
+        $password = $this->input->post('loginPassword');
         
-        $r = new stdClass();
+        $response = new stdClass();
         
-        if($email == 'user@user.com' && $password == '1234'){
-            $r->result = true;
+        if($username == 'user@user.com' && $password == '1234'){
+            
+            $user = new stdClass();
+            $user->username = $username;
+            $user->password = $password;
+            $this->session->set_userdata(array('user'=>$user));  
+            
+            $response->result = true;
         }else{
-            $r->result = false;
-            $r->msg = 'E-mail ou senha inválidos.';
+            $response->result = false;
+            $response->msg = 'Dados inválidos.';
         }
-        echo json_encode($r);
+        echo json_encode($response);
     }
 	
+    public function actionLogout(){
+        $this->session->sess_destroy();
+        redirect('/', 'refresh');
+    }
+    
 	public function signup(){
         $this->load->view('app/signup');
     }
