@@ -1,13 +1,18 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class App extends CI_Controller {
-	    
+	 
     public function index(){
+        
+        $pageData = array();
+        $pageData['page'] = 'home';
+        $pageData['logged'] = false;
+        
         if($this->session->userdata('user')){
-           $this->load->view('app/home', array('logged'=>true));
-        }else{
-            $this->load->view('app/home', array('logged'=>false));
+           $pageData['logged'] = true;
         }
+        
+        $this->load->view('app/home', $pageData);
 	}
     
     public function actionLogin(){
@@ -16,7 +21,7 @@ class App extends CI_Controller {
         
         $response = new stdClass();
         
-        if($username == 'user@user.com' && $password == '1234'){
+        if($username == 'user' && $password == '1234'){
             
             $user = new stdClass();
             $user->username = $username;
