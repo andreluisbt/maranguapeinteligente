@@ -10,7 +10,7 @@
             <ul>
                 <li class="dropdown">
                     <a href="#" data-toggle="dropdown">
-                        <img class="user-pic" src="<?php echo base_url('img/user-img_med.png'); ?>" />
+                        <img class="user-pic" src="<?php echo base_url('img/user02-img.png'); ?>" />
                     </a>
                     <ul class="user-dropdown dropdown-menu">
                         <li>

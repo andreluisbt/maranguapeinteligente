@@ -11,10 +11,31 @@
 @text-color: #525F72;
 @headings-color: @text-color;
 
+*{
+	&::-webkit-scrollbar-track{
+		background-color: #F5F5F5;
+		border: 1px solid #ddd;
+	}
+	
+	&::-webkit-scrollbar{
+		width: 10px;
+	}
+	
+	&::-webkit-scrollbar-thumb{
+		background-color: #ddd;
+	}
+}
+
+
+
 body{
 	font-family: 'Open Sans', sans-serif;
 	font-style: normal;
 	font-weight: 300;
+	
+	
+	
+	
 }
 
 ul{
@@ -118,7 +139,7 @@ header{
 	padding-top: 10px;
 	
 	#logo{
-		margin-bottom: 20px;
+		margin-bottom: 10px;
 		@media (max-width: @screen-md-min){
 			text-align: center;	
 		}
@@ -205,7 +226,71 @@ header{
 	}
 }
 
-
+.project-item{
+	margin-top: 65px;
+	.item-header{
+		position: absolute;
+		top: -50px;
+		width: 100%;
+		z-index: 10;
+		.owner-img{
+			width: 65px;
+			height: 65px;
+			border: 2px solid @brand-primary;
+			border-radius: 100px;
+			background-color: #fff;
+			padding: 3px;
+			float: left;
+			margin-bottom: -30px;
+		}
+		.owner-name{
+			color: @brand-primary;
+			float: left;
+			font-size: 18px;
+			margin-top: 20px;
+			margin-left: 10px;
+		}
+	}
+	
+	.count-likes{
+		display: inline-block;
+		margin-top: 5px;
+		li{
+			display: inline-block;
+			font-size: 16px;
+			color: #8E8E8E;
+			i{
+				margin: 0 5px;
+			}
+		}
+	}
+	.title{
+		font-size: 22px;
+		//text-align: center
+	}
+	.carousel{
+		.carousel-inner{
+			img{
+				width: 100%;
+			}
+		}
+	}
+	
+	.actions{
+		position: absolute;
+		right: 20px;
+		margin-top: -65px;
+		
+		li{
+			display: inline-block;
+			a{
+				border-radius: 100px;
+				padding: 15px 13px;
+				margin-left: 5px;
+			}
+		}
+	}
+}
 
 #home{
 	header{
@@ -259,71 +344,7 @@ header{
 
 #sectionProjects{
 	padding-top: 20px;
-	.project-item{
-		margin-top: 65px;
-		.item-header{
-			position: absolute;
-			top: -50px;
-			width: 100%;
-			z-index: 10;
-			.owner-img{
-				width: 65px;
-				height: 65px;
-				border: 2px solid @brand-primary;
-				border-radius: 100px;
-				background-color: #fff;
-				padding: 3px;
-				float: left;
-				margin-bottom: -30px;
-			}
-			.owner-name{
-				color: @brand-primary;
-				float: left;
-				font-size: 18px;
-				margin-top: 20px;
-				margin-left: 10px;
-			}
-		}
-		
-		.count-likes{
-			display: inline-block;
-			margin-top: 5px;
-			li{
-				display: inline-block;
-				font-size: 16px;
-				color: #8E8E8E;
-				i{
-					margin: 0 5px;
-				}
-			}
-		}
-		.title{
-			font-size: 22px;
-			text-align: center
-		}
-		.carousel{
-			.carousel-inner{
-				img{
-					width: 100%;
-				}
-			}
-		}
-		
-		.actions{
-			position: absolute;
-			right: 20px;
-			margin-top: -65px;
-			
-			li{
-				display: inline-block;
-				a{
-					border-radius: 100px;
-					padding: 15px 13px;
-					margin-left: 5px;
-				}
-			}
-		}
-	}
+	
 	
 	.load-more{
 		margin-top: 30px;
@@ -336,6 +357,10 @@ header{
 footer{
 	text-align: center;
 	background-color: #E8E8EC;
+	color: #004C64;
 	margin-top: 25px;
 	padding: 10px;
+	img{
+		margin-bottom: 5px;
+	}
 }

@@ -67,7 +67,7 @@
                 <div class="project-item col-md-6">
                     <div class="clearfix"></div>
                     <div class="item-header">
-                        <img class="owner-img" src="<?php echo base_url('img/user-img_med.png'); ?>" />
+                        <img class="owner-img" src="<?php echo base_url('img/user01-img.png'); ?>" />
                         <div class="owner-name">Marcelo Ferreira</div>
                      </div>
                      
@@ -135,29 +135,10 @@
             </div>
         </section>
         
-        <footer>
-            <div>
-                <img src="<?php echo base_url('img/logo-rodape.png'); ?>">
-            </div>
-            <div>
-                © 2014 SuaCidade. Todos os direiros reservados
-            </div>
-        </footer>
-        
-       	<div id="generalModal" class="modal fade">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-body">
-						<div class="preload">
-							<span class="bar bar-1"></span>
-							<span class="bar bar-2"></span>
-							<span class="bar bar-3"></span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
+        <!-- footer -->
+        <?php 
+        $this->load->view('app/components/footer');
+        ?>
         
     </body>
 </html>
