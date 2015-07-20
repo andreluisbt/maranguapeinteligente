@@ -42,7 +42,7 @@ $(document).ready(function() {
 	loginSuccess = function(response, status, xhr, $form){
 		$form.find('button[type="submit"]').html('<span class="spin"><i class="fa fa-arrow-right"></i></span>').removeAttr('disabled');
 		if(response.result){
-			window.location.href = '.';
+			location.reload();
 		}else{
 			$form.find('.msg').html('<i class="fa fa-exclamation-triangle"></i> '+response.msg).addClass('error');
 		}
