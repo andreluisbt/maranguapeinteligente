@@ -25,3 +25,8 @@
 </script>
 
 <script type="text/javascript" src="<?php echo base_url('js/app.js');?>"></script>
+
+<?php
+global $USER;
+$USER = $this->session->userdata('user');
+?>

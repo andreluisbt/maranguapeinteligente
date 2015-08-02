@@ -5,12 +5,14 @@
         </a>
     </div>
     <div class="col-xs-10 col-sm-8 col-md-6 col-xs-offset-1 col-sm-offset-2 col-md-offset-4">
-        <?php if($logged){?>
+        <?php 
+        global $USER;
+        if($USER){?>
         <div id="userBar" class="pull-right">
             <ul>
                 <li class="dropdown">
                     <a href="#" data-toggle="dropdown">
-                        <img class="user-pic" src="<?php echo base_url('img/user02-img.png'); ?>" />
+                        <img class="user-pic" src="<?php echo base_url('datafiles/users/'.$USER->id.'.jpg'); ?>" />
                     </a>
                     <ul class="user-dropdown dropdown-menu">
                         <li>
@@ -26,7 +28,7 @@
         
         <?php }else{?>
         <div id="login" class="">
-           	<form class="form-inline" method="post" data-success="loginSuccess" data-before-submit="loginBeforeSubmit" action="<?php echo site_url('app/actionLogin'); ?>"> 
+           	<form class="form-inline" method="post" data-before-submit="loginBeforeSubmit" data-success="loginSuccess" action="<?php echo site_url('app/actionLogin'); ?>"> 
     			<div class="msg text-center"></div>
     			<div class="form-group">
     				<input type="text" id="loginUser" name="loginUser" class="form-control"  placeholder="Usuário">

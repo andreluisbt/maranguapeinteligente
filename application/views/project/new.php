@@ -3,15 +3,22 @@
     <head>
     	<title>Novo Projeto</title>
     	
-    	<?php $this->load->view('app/components/head');?>
-          
+    	<?php 
+    	$this->load->view('app/components/head');
+    	global $USER;
+    	?>
+        
+        
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCH3l0aJyPVgJlDgKSWg78FJrWrtMynNt4"></script>
+        <script type="text/javascript" src="<?php echo base_url('js/projects/newProject.js');?>"></script>
+        
     </head>
     <body id="<?php echo $page;?>">
-        <header class="<?php echo ($logged?'logged':''); ?>">
+        <header class="<?php echo ($USER?'logged':''); ?>">
             <div class="container">
                 
                 <?php 
-                $this->load->view('app/components/header', array('logged'=>$logged, 'page'=>$page));
+                $this->load->view('app/components/header', array('page'=>$page));
                 ?>
                 
             </div>
@@ -27,7 +34,8 @@
         <section id="sectionNewProject">
             <div class="container">
                 
-                <form>
+                <form id="formNewProject" method="post" data-before-submit="newProjectBeforeSubmit" data-success="newProjectSuccess" action="<?php echo site_url('projects/actionNewProject'); ?>">
+                    <div class="msgs"></div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="category">Categoria</label>
@@ -89,18 +97,16 @@
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="description">Localização</label>
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15925.44138054886!2d-38.49696606190182!3d-3.7313932812605937!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-BR!2sbr!4v1437335145835" width="100%" height="280" frameborder="0" style="border:0" allowfullscreen></iframe>
+                            <div id="map"></div>
+                            <input type="hidden" id="lat" name="lat">
+                            <input type="hidden" id="lng" name="lgn">
                         </div>
                     </div>
                     
                      <div class="col-sm-12 text-center">
-                        
-                        <button type="buttom" class="btn btn-primary">Salvar</button>
+                        <button type="submit" class="btn btn-primary">Salvar</button>
                         <button type="buttom" class="btn btn-success">Salvar e publicar</button>
-                        
                      </div>
-                
-            
             
                 </form>
             </div>

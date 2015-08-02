@@ -9,29 +9,26 @@ class App extends CI_Controller {
         $pageData['logged'] = false;
         
         if($this->session->userdata('user')){
-           $pageData['logged'] = true;
+           $pageData['user'] = $this->session->userdata('user');
         }
         
         $this->load->view('app/home', $pageData);
 	}
     
     public function actionLogin(){
+        $this->load->model('UsersModel');
+        
         $username = $this->input->post('loginUser');
-        $password = $this->input->post('loginPassword');
+        $password = md5($this->input->post('loginPassword'));
         
         $response = new stdClass();
-        
-        if($username == 'user' && $password == '1234'){
-            
-            $user = new stdClass();
-            $user->username = $username;
-            $user->password = $password;
+        if($user = $this->UsersModel->checkLogin($username, $password)){
+            unset($user->password);
             $this->session->set_userdata(array('user'=>$user));  
-            
             $response->result = true;
         }else{
             $response->result = false;
-            $response->msg = 'Dados inválidos.';
+            $response->msg = 'Usuário ou senha inválidos.';
         }
         echo json_encode($response);
     }

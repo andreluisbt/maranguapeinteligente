@@ -46,7 +46,6 @@ $(document).ready(function() {
 		}else{
 			$form.find('.msg').html('<i class="fa fa-exclamation-triangle"></i> '+response.msg).addClass('error');
 		}
-	
 	};
 
 });

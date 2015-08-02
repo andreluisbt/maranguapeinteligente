@@ -3,14 +3,17 @@
     <head>
     	<title>Detalhes do projeto</title>
     	
-    	<?php $this->load->view('app/components/head');?>
+    	<?php 
+    	global $USER;
+    	$this->load->view('app/components/head');
+    	?>
           
     </head>
     <body id="<?php echo $page;?>">
-        <header class="<?php echo ($logged?'logged':''); ?>">
+        <header class="<?php echo ($USER?'logged':''); ?>">
             <div class="container">
                 <?php 
-                $this->load->view('app/components/header', array('logged'=>$logged, 'page'=>$page));
+                $this->load->view('app/components/header', array('page'=>$page));
                 ?>
             </div>
         </header>
@@ -31,7 +34,7 @@
                 <div class="col-md-6">
                     <div class="project-item">
                         <div class="title">
-                            Substituição dos banco da praça da bandeira
+                            <?php echo $project->title;?>
                         </div>
                          
                          <div id="carousel" class="carousel slide" data-ride="carousel">
@@ -85,7 +88,7 @@
                     </div>
                     
                     <div class="project-description">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        <?php echo $project->description;?>                    
                     </div>
                     
                 </div>
