@@ -8,7 +8,7 @@
     	?>
     </head>
     <body id="<?php echo $page;?>">
-        <header class="<?php echo ($logged?'logged':''); ?>">
+        <header class="<?php echo ($USER?'logged':''); ?>">
             <div class="container">
                 
                 <?php 
@@ -65,33 +65,39 @@
             <div class="container">
                 
                 <?php
-                for($i=0; $i<10; $i++){
+                foreach($projects as $project) {
                 ?>
                 <div class="project-item col-md-6">
                     <div class="clearfix"></div>
                     <div class="item-header">
-                        <img class="owner-img" src="<?php echo base_url('img/user01-img.png'); ?>" />
-                        <div class="owner-name">Marcelo Ferreira</div>
+                        <img class="owner-img" src="<?php echo base_url('datafiles/users/'.$project->owner->id.'.jpg'); ?>" />
+                        <div class="owner-name"><?php echo $project->owner->name;?></div>
                      </div>
                      
-                     <div id="project<?php echo $i;?>Images" class="carousel slide" data-ride="carousel">
+                     <div id="project<?php echo $project->id;?>Images" class="carousel slide" data-ride="carousel">
                         <ol class="carousel-indicators">
-                            <li data-target="#project<?php echo $i;?>Images" data-slide-to="0" class="active"></li>
-                            <li data-target="#project<?php echo $i;?>Images" data-slide-to="1"></li>
-                            <li data-target="#project<?php echo $i;?>Images" data-slide-to="2"></li>
+                            <?php 
+                            $active = 'active';
+							$slideCount = 0;
+                            foreach($project->images as $image){
+                                echo '<li data-target="#project'.$project->id.'Images" data-slide-to="'.$slideCount.'" class="'.$active.'"></li>';
+                                $active = '';
+								$slideCount++;
+                            }
+                            ?>
                         </ol>
-                        <a href="<?php echo site_url('projects/viewProject/1')?>">
-                            <div class="carousel-inner" role="listbox">
-                                <div class="item active">
-                                    <img src="<?php echo base_url('img/img-project-sample.png'); ?>">
-                                </div>
-                                <div class="item">
-                                    <img src="<?php echo base_url('img/img-project-sample.png'); ?>">
-                                </div>
-                                <div class="item">
-                                    <img src="<?php echo base_url('img/img-project-sample.png'); ?>">
-                                </div>
-                            </div>
+                        <a href="<?php echo site_url('projects/viewProject/'.$project->id)?>">
+	                        <div class="carousel-inner" role="listbox">
+	                            <?php 
+	                            $active = 'active';
+	                            foreach($project->images as $image){
+	                                echo '<div class="item '.$active.'">
+	                                        <img src="'.base_url($image).'">
+	                                    </div>';
+	                                $active = '';
+	                            }
+	                            ?>
+	                        </div>
                         </a>
                     </div>
                     

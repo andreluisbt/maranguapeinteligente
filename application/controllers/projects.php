@@ -28,15 +28,7 @@ class Projects extends CI_Controller {
         $pageData = array();
         
         $this->load->model('ProjectsModel');
-        $project = $this->ProjectsModel->get($id);
-        
-        $projectFileFolder = APPPATH.'../datafiles/projects/'.$project->id;
-        $dirOpenned = opendir($projectFileFolder);
-        while (false !== ($filename = readdir($dirOpenned))) {
-            if($filename != '.' && $filename != '..'){
-                $project->images[] = 'datafiles/projects/'.$project->id.'/'.$filename;
-            }
-        }
+        $project = $this->ProjectsModel->getById($id);
         
         $pageData['page'] = 'viewProject';
         $pageData['project'] = $project;

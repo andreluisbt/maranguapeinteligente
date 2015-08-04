@@ -3,17 +3,29 @@
 class App extends CI_Controller {
 	 
     public function index(){
+    	
+        //$this->load->model('ProjectsModel');
+        
+        $pageData = array();
+        $pageData['page'] = 'home';
+        //$pageData['logged'] = false;
+		//$pageData['projects'] = $this->ProjectsModel->get(1);
+		
+        $this->load->view('app/home', $pageData);
+	}
+	
+	public function showProjects($page){
+    	
+        $this->load->model('ProjectsModel');
         
         $pageData = array();
         $pageData['page'] = 'home';
         $pageData['logged'] = false;
-        
-        if($this->session->userdata('user')){
-           $pageData['user'] = $this->session->userdata('user');
-        }
-        
+		$pageData['projects'] = $this->ProjectsModel->get($page);
+		
         $this->load->view('app/home', $pageData);
 	}
+	
     
     public function actionLogin(){
         $this->load->model('UsersModel');
