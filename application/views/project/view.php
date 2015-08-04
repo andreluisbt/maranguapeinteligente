@@ -21,13 +21,13 @@
         <section id="sectionViewProject">
             <div class="container">
                 <div class="owner">
-                    <img class="pull-left" src="<?php echo base_url('img/user01-img.png'); ?>" />
+                    <img class="pull-left" src="<?php echo base_url('datafiles/users/'.$project->owner->id.'.jpg'); ?>" />
                     <div class="count-date">
-                        <a href="#">12 projetos</a>
-                        <span>desde 14/01/2010</span>
+                        <a><?php echo $project->owner->countProjects;?> projeto(s)</a>
+                        <!--<span>desde 14/01/2010</span>-->
                     </div>
-                    <a href="#" class="name">
-                        Marcelo Ferreira
+                    <a class="name">
+                        <?php echo $project->owner->name;?>
                     </a>
                 </div>
                 <div class="clearfix"></div>
@@ -37,25 +37,29 @@
                             <?php echo $project->title;?>
                         </div>
                          
-                         <div id="carousel" class="carousel slide" data-ride="carousel">
+                         <div id="projectImages" class="carousel slide" data-ride="carousel">
                             <ol class="carousel-indicators">
-                                <li data-target="#carousel" data-slide-to="0" class="active"></li>
-                                <li data-target="#carousel" data-slide-to="1"></li>
-                                <li data-target="#carousel" data-slide-to="2"></li>
+                                <?php 
+                                $active = 'active';
+								$slideCount = 0;
+                                foreach($project->images as $image){
+                                    echo '<li data-target="#projectImages" data-slide-to="'.$slideCount.'" class="'.$active.'"></li>';
+                                    $active = '';
+									$slideCount++;
+                                }
+                                ?>
                             </ol>
-                            <a href="<?php echo site_url('project/viewProject')?>">
-                                <div class="carousel-inner" role="listbox">
-                                    <?php 
-                                    $active = 'active';
-                                    foreach($project->images as $image){
-                                        echo '<div class="item '.$active.'">
-                                                <img src="'.base_url($image).'">
-                                            </div>';
-                                        $active = '';
-                                    }
-                                    ?>
-                                </div>
-                            </a>
+                            <div class="carousel-inner" role="listbox">
+                                <?php 
+                                $active = 'active';
+                                foreach($project->images as $image){
+                                    echo '<div class="item '.$active.'">
+                                            <img src="'.base_url($image).'">
+                                        </div>';
+                                    $active = '';
+                                }
+                                ?>
+                            </div>
                         </div>
                         
                         <ul class="count-likes">

@@ -74,11 +74,11 @@
                         <div class="owner-name">Marcelo Ferreira</div>
                      </div>
                      
-                     <div id="carousel_<?php echo $i;?>" class="carousel slide" data-ride="carousel">
+                     <div id="project<?php echo $i;?>Images" class="carousel slide" data-ride="carousel">
                         <ol class="carousel-indicators">
-                            <li data-target="#carousel_<?php echo $i;?>" data-slide-to="0" class="active"></li>
-                            <li data-target="#carousel_<?php echo $i;?>" data-slide-to="1"></li>
-                            <li data-target="#carousel_<?php echo $i;?>" data-slide-to="2"></li>
+                            <li data-target="#project<?php echo $i;?>Images" data-slide-to="0" class="active"></li>
+                            <li data-target="#project<?php echo $i;?>Images" data-slide-to="1"></li>
+                            <li data-target="#project<?php echo $i;?>Images" data-slide-to="2"></li>
                         </ol>
                         <a href="<?php echo site_url('projects/viewProject/1')?>">
                             <div class="carousel-inner" role="listbox">

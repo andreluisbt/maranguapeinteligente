@@ -16,12 +16,18 @@ class UsersModel extends CI_Model {
 	}
 
 	public function get($id){
+		$this->load->model('ProjectsModel');
 		if(is_null($id)){
 			$query = $this->db->get("users");
+			$users = $query->result();
+			return $users;
 		}else{
 			$query = $this->db->get_where("users", array("id"=>$id));
+			$user = $query->row();
+			$projects = $this->ProjectsModel->getByOwnerId($id);
+			$user->countProjects = count($projects);
+			return $user;
 		}
-        return $query->result();
 	}
     
     public function checkLogin($username, $password){

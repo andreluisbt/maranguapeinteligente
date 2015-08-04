@@ -67,7 +67,10 @@ $(document).ready(function() {
 		if(response.result){
 			$msgs.addClass('success').html(response.msg);
 			$form.resetForm();
-			marker.setMap(null);
+			$('ul.files li').remove();
+			if(marker != null){
+				marker.setMap(null);
+			}
 		}else{
 			$msgs.addClass('error').html(response.msg);
 		}

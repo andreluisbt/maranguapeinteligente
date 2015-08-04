@@ -16,31 +16,27 @@ class ProjectsModel extends CI_Model {
 		parent::__construct();
 	}
     
-    
 	public function get($id){
+		$this->load->model('UsersModel');
 		if(is_null($id)){
 			$query = $this->db->get("projects");
             return $query->result();
 		}else{
 			$query = $this->db->get_where("projects", array("id"=>$id));
+            $project = $query->row();
+			$project->owner = $this->UsersModel->get($project->owner);
             return $query->row();
         }
 	}
     
-    /*
-    public function checkLogin($username, $password){
-        
-        $query = $this->db->get_where("users", array("email"=>$username, "password"=>$password));
-        if($query->num_rows() > 0){
-            return $query->row();
-        }else{
-            return false;
-        }
-    }
-    */
-    
+	public function getByOwnerId($ownerId){
+		$query = $this->db->get_where("projects", array("owner"=>$ownerId));
+        return $query->result();
+	}
+	
 	public function addProject(){
 		
+		$this->owner = $this->session->userdata('user')->id;
         $this->category = $this->input->post('category');
         $this->title = $this->input->post('title');
         $this->description = $this->input->post('description');

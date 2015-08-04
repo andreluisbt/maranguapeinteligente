@@ -64,44 +64,29 @@ class Projects extends CI_Controller {
             $config_upload['max_height']  = '2500';
             $config_upload['remove_spaces'] = true;
             
-            
-            
             $images = $_FILES;
             $cpt = count($_FILES['image']['name']);
             
             $this->load->library('upload', $config_upload);
+			$this->load->library('image_lib');
             for($i=0; $i<$cpt; $i++){           
-                $_FILES['image']['name']= $images['image']['name'][$i];
-                $_FILES['image']['type']= $images['image']['type'][$i];
-                $_FILES['image']['tmp_name']= $images['image']['tmp_name'][$i];
-                $_FILES['image']['error']= $images['image']['error'][$i];
-                $_FILES['image']['size']= $images['image']['size'][$i];    
+                $_FILES['image']['name'] = $images['image']['name'][$i];
+                $_FILES['image']['type'] = $images['image']['type'][$i];
+                $_FILES['image']['tmp_name'] = $images['image']['tmp_name'][$i];
+                $_FILES['image']['error'] = $images['image']['error'][$i];
+                $_FILES['image']['size'] = $images['image']['size'][$i];    
                 $this->upload->do_upload('image');
                 
-                $config_resize['source_image'] = $projectFileFolder.'/'.$_FILES['image']['name'];
+                $config_resize['source_image'] = $projectFileFolder.'/'.$images['image']['name'][$i];
                 $config_resize['image_library'] = 'gd2';
-                $config_resize['maintain_ratio'] = false;
+                $config_resize['maintain_ratio'] = true;
                 $config_resize['width'] = 540;
                 $config_resize['height'] = 268;
-                $this->load->library('image_lib', $config_resize);
+                
+				$this->image_lib->clear();
+   				$this->image_lib->initialize($config_resize);
                 $this->image_lib->resize();
-                
             }
-            
-            
-            
-            /*
-            if (!$this->upload->do_upload('image[]')){
-                $error = array('error' => $this->upload->display_errors());
-                var_dump($error);die;
-                
-                //$this->load->view('upload_form', $error);
-            }else{
-                //$data = array('upload_data' => $this->upload->data());
-                //$this->load->view('upload_success', $data);
-            }
-            */
-            
             
             $response->msg = "Sugestão de Projeto cadastrado com sucesso";
         }else{
