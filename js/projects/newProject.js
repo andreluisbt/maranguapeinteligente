@@ -33,7 +33,30 @@ $(document).ready(function() {
 	  });
 	}
 	
-
+	$('#formNewProject').on('change', 'input[name="image[]"]', (function(e){
+        var fileid = Math.random().toString().replace('.', '');
+		
+        $(this).after('<input type="file" name="image[]" />');
+        $(this).attr('id', fileid);
+        
+        var itemFile = '<li>'+
+            '<i class="fa fa-picture-o"></i>'+
+            (e.target.files[0].name)+
+            '<button type="button" class="btn pull-right" data-fileid="'+fileid+'"><i class="fa fa-times"></i></button>'+
+        '</li>';
+		
+		$('ul.files').append(itemFile);
+    }));
+	
+	$('#addFile').click(function(e){
+		$('input[name="image[]"]').last().trigger('click');
+	});
+	
+	$('ul.files').on('click', 'li button', (function(e){
+		$('#'+$(this).data('fileid')).remove();
+		$(this).parent().remove();
+	}));
+	
 	newProjectBeforeSubmit = function(formData, $form, options){
 		$form.find('.msgs').removeClass('success error')
 							.html(preload);

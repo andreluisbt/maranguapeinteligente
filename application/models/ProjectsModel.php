@@ -50,7 +50,7 @@ class ProjectsModel extends CI_Model {
         $this->publish = 1;
         
         if($this->db->insert('projects', $this)){
-        	return true;
+            return $this->db->insert_id();
 		}else{
 			return false;
 		}

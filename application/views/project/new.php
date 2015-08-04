@@ -33,8 +33,7 @@
         
         <section id="sectionNewProject">
             <div class="container">
-                
-                <form id="formNewProject" method="post" data-before-submit="newProjectBeforeSubmit" data-success="newProjectSuccess" action="<?php echo site_url('projects/actionNewProject'); ?>">
+                <form id="formNewProject" method="post" enctype="multipart/form-data" data-before-submit="newProjectBeforeSubmit" data-success="newProjectSuccess" action="<?php echo site_url('projects/actionNewProject'); ?>">
                     <div class="msgs"></div>
                     <div class="col-md-6">
                         <div class="form-group">
@@ -61,32 +60,13 @@
                         </div>
                         
                         <div class="form-group">
+                            <input type="file" name="image[]" />
                             <ul class="files">
-                                <li>
-                                    <i class="fa fa-picture-o"></i>
-                                    Imagem01.png
-                                    <button type="button" class="btn pull-right"><i class="fa fa-times"></i></buttom>
-                                </li>
-                                <li>
-                                    <i class="fa fa-picture-o"></i>
-                                    Imagem02.png
-                                    <button type="button" class="btn pull-right"><i class="fa fa-times"></i></buttom>
-                                </li>
-                                <li>
-                                    <i class="fa fa-picture-o"></i>
-                                    Imagem03.png
-                                    <button type="button" class="btn pull-right"><i class="fa fa-times"></i></buttom>
-                                </li>
-                                <li>
-                                    <i class="fa fa-picture-o"></i>
-                                    Imagem04.png
-                                    <button type="button" class="btn pull-right"><i class="fa fa-times"></i></buttom>
-                                </li>
                             </ul>
                         </div>
                         
                         <div class="form-group">
-                            <button type="button" class="btn btn-primary">
+                            <button type="button" id="addFile" class="btn btn-primary">
                                 <i class="fa fa-upload"></i>
                                 Adicionar nova imagem
                             </button>
@@ -104,7 +84,7 @@
                     </div>
                     
                      <div class="col-sm-12 text-center">
-                        <button type="submit" class="btn btn-primary">Salvar</button>
+                       <!-- <<button type="submit" class="btn btn-primary">Salvar</button> -->
                         <button type="buttom" class="btn btn-success">Salvar e publicar</button>
                      </div>
             

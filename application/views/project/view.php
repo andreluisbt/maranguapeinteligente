@@ -45,15 +45,15 @@
                             </ol>
                             <a href="<?php echo site_url('project/viewProject')?>">
                                 <div class="carousel-inner" role="listbox">
-                                    <div class="item active">
-                                        <img src="<?php echo base_url('img/img-project-sample.png'); ?>">
-                                    </div>
-                                    <div class="item">
-                                        <img src="<?php echo base_url('img/img-project-sample.png'); ?>">
-                                    </div>
-                                    <div class="item">
-                                        <img src="<?php echo base_url('img/img-project-sample.png'); ?>">
-                                    </div>
+                                    <?php 
+                                    $active = 'active';
+                                    foreach($project->images as $image){
+                                        echo '<div class="item '.$active.'">
+                                                <img src="'.base_url($image).'">
+                                            </div>';
+                                        $active = '';
+                                    }
+                                    ?>
                                 </div>
                             </a>
                         </div>
