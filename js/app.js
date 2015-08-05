@@ -17,6 +17,8 @@ $(document).ready(function() {
 	});
     
     
+    
+    
     /** Ajax padrão para os forms **/
 	$('form').on('submit', function(e){
 		e.preventDefault();
@@ -47,5 +49,29 @@ $(document).ready(function() {
 			$form.find('.msg').html('<i class="fa fa-exclamation-triangle"></i> '+response.msg).addClass('error');
 		}
 	};
+	
+	
+	$.ajax({
+		url : site_url('app/showProjects'),
+		beforeSend: function(){
+			$('#home main').html(preload);
+		},
+		success: function(data){
+			$('#home #sectionProjects').html(data);
+		}
+	});
 
+	$('#sectionProjects').on('click', '.load-more', function(e){
+		var projectPage = $(this).data('projectPage');
+		$.ajax({
+			url : site_url('app/showProjects'),
+			beforeSend: function(){
+				$('#home main').html(preload);
+			},
+			success: function(data){
+				$('#home #sectionProjects').html(data);
+			}
+		});
+	});
+	
 });
