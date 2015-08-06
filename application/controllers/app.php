@@ -21,7 +21,7 @@ class App extends CI_Controller {
         $pageData = array();
         $pageData['projectPage'] = $page+1;
         //$pageData['logged'] = false;
-		$pageData['projects'] = $this->Projects_Model->get($page);
+		$pageData['projects'] = $this->ProjectsModel->get($page);
 		
         $this->load->view('project/projects', $pageData);
 	}
