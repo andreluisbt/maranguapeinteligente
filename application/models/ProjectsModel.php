@@ -26,14 +26,7 @@ class ProjectsModel extends CI_Model {
 		
 		for($i=0; $i<count($projects); $i++){
 			$projects[$i]->owner = $this->UsersModel->get($projects[$i]->owner);
-			
-			$projectFileFolder = APPPATH.'../datafiles/projects/'.$projects[$i]->id;
-	        $dirOpenned = opendir($projectFileFolder);
-	        while (false !== ($filename = readdir($dirOpenned))) {
-	            if($filename != '.' && $filename != '..'){
-	                $projects[$i]->images[] = 'datafiles/projects/'.$projects[$i]->id.'/'.$filename;
-	            }
-	        }
+			$projects[$i]->images = $this->getProjectImages($projects[$i]->id);
 		}
 		return $projects;
 	}
@@ -43,17 +36,25 @@ class ProjectsModel extends CI_Model {
 		$query = $this->db->get_where("projects", array("id"=>$id));
         $project = $query->row();
 		$project->owner = $this->UsersModel->get($project->owner);
-		
-		$projectFileFolder = APPPATH.'../datafiles/projects/'.$project->id;
-        $dirOpenned = opendir($projectFileFolder);
-        while(false !== ($filename = readdir($dirOpenned))){
-            if($filename != '.' && $filename != '..'){
-                $project->images[] = 'datafiles/projects/'.$project->id.'/'.$filename;
-            }
-        }
+        $project->images = $this->getProjectImages($project->id);
 		
         return $project;
 	}
+
+    public function getProjectImages($projectId){
+        
+        $projectImages = array();
+        $projectFileFolder = APPPATH.'..//datafiles//projects//'.$projectId;
+        
+        $dirOpenned = opendir($projectFileFolder);
+        while(false !== ($filename = readdir($dirOpenned))){
+            if($filename != '.' && $filename != '..'){
+                $projectImages[] = $projectFileFolder.'//'.$filename;
+            }
+        }
+        
+        return $projectImages;
+    }
     
 	public function getByOwnerId($ownerId){
 		$query = $this->db->get_where("projects", array("owner"=>$ownerId));
