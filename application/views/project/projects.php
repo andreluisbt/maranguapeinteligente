@@ -64,7 +64,7 @@
         
         <div class="title">
             <a href="#">
-                Substituição dos banco da praça da bandeira
+               <?php echo $project->title; ?>
             </a>
         </div>
         
