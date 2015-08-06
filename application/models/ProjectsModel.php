@@ -44,12 +44,12 @@ class ProjectsModel extends CI_Model {
     public function getProjectImages($projectId){
         
         $projectImages = array();
-        $projectFileFolder = APPPATH.'..//datafiles//projects//'.$projectId;
+        $projectFileFolder = APPPATH.'../datafiles/projects/'.$projectId;
         
         $dirOpenned = opendir($projectFileFolder);
         while(false !== ($filename = readdir($dirOpenned))){
             if($filename != '.' && $filename != '..'){
-                $projectImages[] = $projectFileFolder.'//'.$filename;
+                $projectImages[] = $projectFileFolder.'/'.$filename;
             }
         }
         
