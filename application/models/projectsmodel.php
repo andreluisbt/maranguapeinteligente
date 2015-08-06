@@ -17,13 +17,12 @@ class ProjectsModel extends CI_Model {
 	}
     
 	public function get($page = 1, $limit = 10){
-		//$this->load->model('UsersModel');
+		$this->load->model('UsersModel');
 		
 		$offset = ($page-1)*$limit;
 		
 		$query = $this->db->get('projects', $limit, $offset);
         $projects = $query->result();
-		
 		
 		for($i=0; $i<count($projects); $i++){
 			$projects[$i]->owner = $this->UsersModel->get($projects[$i]->owner);
