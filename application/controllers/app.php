@@ -16,7 +16,7 @@ class App extends CI_Controller {
 	
 	public function showProjects($page=1){
     	
-        $this->load->model('projectsmodel');
+        $this->load->model('ProjectsModel');
         
         $pageData = array();
         $pageData['projectPage'] = $page+1;
