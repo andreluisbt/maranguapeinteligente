@@ -16,12 +16,12 @@ class App extends CI_Controller {
 	
 	public function showProjects($page=1){
     	
-        $this->load->model('ProjectsModel');
+        $this->load->model('Projects_Model');
         
         $pageData = array();
         $pageData['projectPage'] = $page+1;
         //$pageData['logged'] = false;
-		$pageData['projects'] = $this->ProjectsModel->get($page);
+		$pageData['projects'] = $this->Projects_Model->get($page);
 		
         $this->load->view('project/projects', $pageData);
 	}
