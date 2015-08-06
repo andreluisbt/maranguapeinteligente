@@ -34,7 +34,6 @@ $(document).ready(function() {
 	});
 	/** ----------------------- **/
 	
-	
     $('.carousel').carousel();
 
 	loginBeforeSubmit = function(formData, $form, options){
@@ -50,11 +49,10 @@ $(document).ready(function() {
 		}
 	};
 	
-	
 	$.ajax({
-		url : site_url('app/showProjects'),
+		url : site_url('app/showAllProjects'),
 		beforeSend: function(){
-			$('#home main').html(preload);
+			$('#home #sectionProjects').append(preload)
 		},
 		success: function(data){
 			$('#home #sectionProjects').html(data);
@@ -62,14 +60,17 @@ $(document).ready(function() {
 	});
 
 	$('#sectionProjects').on('click', '.load-more', function(e){
+		e.preventDefault();
 		var projectPage = $(this).data('projectPage');
+		$(this).parent().remove();
 		$.ajax({
-			url : site_url('app/showProjects'),
+			url : site_url('app/showAllProjects/'+projectPage),
 			beforeSend: function(){
-				$('#home main').html(preload);
+				$('#home #sectionProjects').append(preload);
 			},
 			success: function(data){
-				$('#home #sectionProjects').html(data);
+				$('#home #sectionProjects .preload').remove();
+				$('#home #sectionProjects').append(data);
 			}
 		});
 	});

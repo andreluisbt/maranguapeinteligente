@@ -74,7 +74,9 @@
     <?php }?>
     
 </div>
+
+<?php if($haveMore){?>
 <div class="text-center">
     <a href="#" data-project-page="<?php echo $projectPage;?>" class="load-more btn btn-primary">Mostrar mais</a>
 </div>
-        
+<?php }?>  
