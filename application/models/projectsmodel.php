@@ -24,12 +24,12 @@ class ProjectsModel extends CI_Model {
 		$query = $this->db->get('projects', $limit, $offset);
         $projects = $query->result();
 		
-		/*
+		
 		for($i=0; $i<count($projects); $i++){
 			$projects[$i]->owner = $this->UsersModel->get($projects[$i]->owner);
 			$projects[$i]->images = $this->getProjectImages($projects[$i]->id);
 		}
-		*/
+		
 		return $projects;
 	}
 	
