@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class ProjectsModel extends CI_Model {
+class Projects_Model extends CI_Model {
 
 	public $id;
 	public $category;
