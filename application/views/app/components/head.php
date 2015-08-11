@@ -5,7 +5,12 @@
 <script src="<?php echo base_url('lib/jquery-2.1.3/jquery-2.1.3.min.js');?>"></script>
 <script src="<?php echo base_url('lib/bootstrap-3.3.2/dist/js/bootstrap.min.js');?>"></script>
 
+<!-- Validation e AjaxForm -->
+<script src="<?php echo base_url('lib/validation-1.13.1/jquery.validate.min.js');?>"></script>
+<script src="<?php echo base_url('lib/validation-1.13.1/additional-methods.min.js');?>"></script>
+<script src="<?php echo base_url('lib/validation-1.13.1/localization/messages_pt_BR.js');?>"></script>
 <script src="<?php echo base_url('lib/jquery.form.min.js');?>"></script>
+
 
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 

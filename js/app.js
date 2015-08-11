@@ -17,8 +17,6 @@ $(document).ready(function() {
 	});
     
     
-    
-    
     /** Ajax padrão para os forms **/
 	$('form').on('submit', function(e){
 		e.preventDefault();

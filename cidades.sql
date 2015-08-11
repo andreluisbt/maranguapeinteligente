@@ -19,8 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Base de Dados: `cidades`
 --
-CREATE DATABASE IF NOT EXISTS `cidades` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `cidades`;
+CREATE DATABASE IF NOT EXISTS `maranguapeinte` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `maranguapeinte`;
 
 -- --------------------------------------------------------
 
