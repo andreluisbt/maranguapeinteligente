@@ -31,7 +31,7 @@
            	<form class="form-inline" method="post" data-before-submit="loginBeforeSubmit" data-success="loginSuccess" action="<?php echo site_url('app/actionLogin'); ?>"> 
     			<div class="msg text-center"></div>
     			<div class="form-group">
-    				<input type="text" id="loginUser" name="loginUser" class="form-control"  placeholder="Usuário">
+    				<input type="text" id="loginUser" name="loginUser" class="form-control"  placeholder="E-mail">
     			</div>
     			<div class="form-group">
                     <input type="password" id="loginPassword" name="loginPassword" class="form-control"  placeholder="Senha">

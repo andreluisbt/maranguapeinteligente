@@ -4,12 +4,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class UsersModel extends CI_Model {
 
 	public $id;
+	public $represents_group;
+	public $group_name;
 	public $name;
 	public $email;
     public $password;
-	public $address;
     public $born;
-    public $picture;
+	public $address;
+	public $cpf;
+    public $image;
 
 	public function __construct(){
 		parent::__construct();
@@ -40,16 +43,30 @@ class UsersModel extends CI_Model {
         }
     }
     
-    /*
-	public function addContact(){
+    
+	public function newUser(){
 		
-		$contactData = json_decode(file_get_contents("php://input"));
+		$this->represents_group = $this->input->post('represents_group');
+       	if($this->represents_group)
+        	$this->group_name = $this->input->post('group_name');
+       	else
+       		$this->group_name = null;
+        $this->name = $this->input->post('name');
+        $this->email = $this->input->post('email');
+        $this->password = md5($this->input->post('password'));
+        $this->born = $this->input->post('born');
+        $this->address = $this->input->post('address');
+        $this->cpf = $this->input->post('cpf');
+        
+        $this->image = $this->input->post('image');
+        $this->timecreated = time();
 
-        if($this->db->insert('contacts', $contactData)){
-        	return true;
+        if($this->db->insert('users', $this)){
+            return $this->db->insert_id();
 		}else{
 			return false;
 		}
+
 	}
-     */
+    
 }

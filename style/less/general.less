@@ -128,13 +128,27 @@ textarea{
 	}
 }
 
+form{
+	label.error{
+		color: #ff0000;
+	    font-weight: normal;
+	    font-size: 12px;
+	}
+}
+
 .msgs{
 	.alert;
 	text-align: center;
+	display: none;
+	&.loading{
+		display: block;
+	}
 	&.success{
+		display: block;
 		.alert-success;
 	}
 	&.error{
+		display: block;
 		.alert-danger;
 	}
 }

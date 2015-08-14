@@ -6,9 +6,9 @@
 <script src="<?php echo base_url('lib/bootstrap-3.3.2/dist/js/bootstrap.min.js');?>"></script>
 
 <!-- Validation e AjaxForm -->
-<script src="<?php echo base_url('lib/validation-1.13.1/jquery.validate.min.js');?>"></script>
-<script src="<?php echo base_url('lib/validation-1.13.1/additional-methods.min.js');?>"></script>
-<script src="<?php echo base_url('lib/validation-1.13.1/localization/messages_pt_BR.js');?>"></script>
+<script src="<?php echo base_url('lib/validation-1.13.1/dist/jquery.validate.min.js');?>"></script>
+<script src="<?php echo base_url('lib/validation-1.13.1/dist/additional-methods.js');?>"></script>
+<script src="<?php echo base_url('lib/validation-1.13.1/dist/localization/messages_pt_BR.js');?>"></script>
 <script src="<?php echo base_url('lib/jquery.form.min.js');?>"></script>
 
 

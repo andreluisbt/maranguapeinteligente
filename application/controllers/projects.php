@@ -82,7 +82,7 @@ class Projects extends CI_Controller {
             
             $response->msg = "Sugestão de Projeto cadastrado com sucesso";
         }else{
-            $response->msg = "Houve um problema ao tentar casdastrar a sugestão de Projeto";
+            $response->msg = "Houve um problema ao tentar cadastrar a sugestão de Projeto";
         }
         
         echo json_encode($response);

@@ -16,37 +16,12 @@ $(document).ready(function() {
 		$(this).removeData('bs.modal');
 	});
     
-    
-    /** Ajax padrão para os forms **/
-	$('form').on('submit', function(e){
-		e.preventDefault();
-		
-		var options = {
-			dataType: 'json',
-	        beforeSubmit: eval($(this).data('beforeSubmit')),
-	        success: eval($(this).data('success'))
- 		};
-		
-		$(this).ajaxSubmit(options); 
-		
-	});
-	/** ----------------------- **/
+
+	formValidationAjax($('#login form'));
+
 	
     $('.carousel').carousel();
 
-	loginBeforeSubmit = function(formData, $form, options){
-		$form.find('button[type="submit"]').html(preload).attr('disabled', 'disabled');
-	};
-
-	loginSuccess = function(response, status, xhr, $form){
-		$form.find('button[type="submit"]').html('<span class="spin"><i class="fa fa-arrow-right"></i></span>').removeAttr('disabled');
-		if(response.result){
-			location.reload();
-		}else{
-			$form.find('.msg').html('<i class="fa fa-exclamation-triangle"></i> '+response.msg).addClass('error');
-		}
-	};
-	
 	$.ajax({
 		url : site_url('app/showAllProjects'),
 		beforeSend: function(){
@@ -72,5 +47,37 @@ $(document).ready(function() {
 			}
 		});
 	});
+
 	
 });
+
+
+formValidationAjax = function($form){
+	$form.validate({
+		submitHandler : function(form) {
+			$(form).ajaxSubmit({
+				dataType: 'json',
+				beforeSubmit: eval($(form).data('beforeSubmit')),
+				success: eval($(form).data('success'))
+			});		
+		}
+	});
+};
+
+/**** Login ****/
+
+loginBeforeSubmit = function(formData, $form, options){
+	$form.find('.msg').html('');
+	$form.find('button[type="submit"]').html(preload).attr('disabled', 'disabled');
+};
+
+loginSuccess = function(response, status, xhr, $form){
+	$form.find('button[type="submit"]').html('<span class="spin"><i class="fa fa-arrow-right"></i></span>').removeAttr('disabled');
+	if(response.result){
+		location.reload();
+	}else{
+		$form.find('.msg').html('<i class="fa fa-exclamation-triangle"></i> '+response.msg).addClass('error');
+	}
+};
+
+/**** End login ****/
