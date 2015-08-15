@@ -155,7 +155,6 @@ form{
 
 header{
 	background: #007297;
-	background-position: center top;
 	padding-top: 10px;
 	
 	#logo{
@@ -265,9 +264,15 @@ header{
 		}
 		.owner-name{
 			color: @brand-primary;
-			float: left;
+			//float: left;
 			font-size: 18px;
 			margin-top: 20px;
+			margin-left: 10px;
+			&.represents{
+				margin-top: 5px;
+			}
+		}
+		.group-name{
 			margin-left: 10px;
 		}
 	}
@@ -293,6 +298,7 @@ header{
 			li{
 				margin-right: 2px;
 				margin-left: 2px;
+				border-color: #666;
 			}
 	   	}
 	  
@@ -322,6 +328,7 @@ header{
 #home{
 	header{
 		background: #007297 url("../../img/header.png") no-repeat;
+		background-position: center top;
 		&.logged{
 			background: #007297;
 		}

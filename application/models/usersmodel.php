@@ -27,9 +27,22 @@ class UsersModel extends CI_Model {
 		}else{
 			$query = $this->db->get_where("users", array("id"=>$id));
 			$user = $query->row();
+			if($user->represents_group){
+                $user->image = 'group.jpg';
+            }
 			$projects = $this->ProjectsModel->getByOwnerId($id);
 			$user->countProjects = count($projects);
 			return $user;
+		}
+	}
+
+	public function getByEmail($email){
+		$query = $this->db->get_where("users", array("email"=>$email));
+		
+		if($query->num_rows()){
+			return $query->row();
+		}else{
+			return false;
 		}
 	}
     
@@ -47,10 +60,13 @@ class UsersModel extends CI_Model {
 	public function newUser(){
 		
 		$this->represents_group = $this->input->post('represents_group');
-       	if($this->represents_group)
+       	if($this->represents_group){
         	$this->group_name = $this->input->post('group_name');
-       	else
+       		$this->image = null;
+       	}else{
        		$this->group_name = null;
+       		$this->image = $this->input->post('image');
+       	}
         $this->name = $this->input->post('name');
         $this->email = $this->input->post('email');
         $this->password = md5($this->input->post('password'));
@@ -58,7 +74,7 @@ class UsersModel extends CI_Model {
         $this->address = $this->input->post('address');
         $this->cpf = $this->input->post('cpf');
         
-        $this->image = $this->input->post('image');
+        
         $this->timecreated = time();
 
         if($this->db->insert('users', $this)){

@@ -89,9 +89,11 @@
 	formValidationAjax($('#signupForm'));
 	$('#signupForm input[name="represents_group"]').click(function(e){
 		if($(this).val() == 1){
-			$('#groupName').parent().show();
+			$('#signupForm #groupName').parent().show();
+			$('#signupForm #image').parent().hide();
 		}else{
-			$('#groupName').parent().hide();
+			$('#signupForm #groupName').parent().hide();
+			$('#signupForm #image').parent().show();
 		}
 	});
 
@@ -108,10 +110,10 @@
 			$msgs.removeClass('loading')
 					.addClass('success')
 					.html(response.msg);
-			//$form.resetForm();
+			$form.resetForm();
 		}else{
-			$msgs.removeClass('error')
-					.addClass('success')
+			$msgs.removeClass('loading')
+					.addClass('error')
 					.html(response.msg);
 		}
 	};

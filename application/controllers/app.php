@@ -34,6 +34,9 @@ class App extends CI_Controller {
         $response = new stdClass();
         if($user = $this->UsersModel->checkLogin($username, $password)){
             unset($user->password);
+            if($user->represents_group){
+                $user->image = 'group.jpg';
+            }
             $this->session->set_userdata(array('user'=>$user));  
             $response->result = true;
         }else{

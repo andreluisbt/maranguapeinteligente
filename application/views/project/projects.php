@@ -5,8 +5,16 @@
     <div class="project-item col-md-6">
         <div class="clearfix"></div>
         <div class="item-header">
-            <img class="owner-img" src="<?php echo base_url('datafiles/users/'.$project->owner->id.'.jpg'); ?>" />
-            <div class="owner-name"><?php echo $project->owner->name;?></div>
+            <img class="owner-img" src="<?php echo base_url('datafiles/users/'.$project->owner->image); ?>" />
+            <div class="pull-left">
+                <?php if ($project->owner->represents_group) {
+                    echo '<div class="owner-name represents">'.$project->owner->name.'</div>
+                          <span class="group-name">'.$project->owner->group_name.'</span>';
+                }else{
+                    echo '<div class="owner-name">'.$project->owner->name.'</div>';
+                }?>
+            </div>
+
          </div>
          
          <div id="project<?php echo $project->id;?>Images" class="carousel slide" data-ride="carousel">

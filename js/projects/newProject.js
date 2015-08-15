@@ -1,4 +1,5 @@
 $(document).ready(function() {
+	formValidationAjax($('#formNewProject'));
 
 	var map, marker = null;
 	function initialize() {

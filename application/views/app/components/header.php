@@ -12,7 +12,7 @@
             <ul>
                 <li class="dropdown">
                     <a href="#" data-toggle="dropdown">
-                        <img class="user-pic" src="<?php echo base_url('datafiles/users/'.$USER->id.'.jpg'); ?>" />
+                        <img class="user-pic" src="<?php echo base_url('datafiles/users/'.$USER->image); ?>" />
                     </a>
                     <ul class="user-dropdown dropdown-menu">
                         <li>
@@ -45,9 +45,11 @@
     		<a href="<?php echo site_url('app/signup'); ?>" data-toggle="modal" data-target="#generalModal">
     		   <i class="fa fa-user"></i>Cadastre-se
     		</a>
+            <!--
     		<a href="<?php echo site_url('app/forgotpassword'); ?>" data-toggle="modal" data-target="#generalModal">
     		   <i class="fa fa-unlock-alt"></i>Esqueci a senha
             </a>
+            -->
         </div>
         <?php }?>
     </div>

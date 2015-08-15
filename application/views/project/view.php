@@ -21,14 +21,19 @@
         <section id="sectionViewProject">
             <div class="container">
                 <div class="owner">
-                    <img class="pull-left" src="<?php echo base_url('datafiles/users/'.$project->owner->id.'.jpg'); ?>" />
+                    <img class="pull-left" src="<?php echo base_url('datafiles/users/'.$project->owner->image); ?>" />
                     <div class="count-date">
                         <a><?php echo $project->owner->countProjects;?> projeto(s)</a>
                         <!--<span>desde 14/01/2010</span>-->
                     </div>
-                    <a class="name">
-                        <?php echo $project->owner->name;?>
-                    </a>
+                    
+                    <?php if ($project->owner->represents_group) {
+                        echo '<div class="name represents">'.$project->owner->name.'</div>
+                              <span class="group">'.$project->owner->group_name.'</span>';
+                    }else{
+                        echo '<a class="name">'.$project->owner->name.'</a>';
+                    }?>
+
                 </div>
                 <div class="clearfix"></div>
                 <div class="col-md-6">

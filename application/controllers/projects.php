@@ -54,7 +54,7 @@ class Projects extends CI_Controller {
             $config_upload['max_size'] = '5120';
             $config_upload['max_width']  = '2500';
             $config_upload['max_height']  = '2500';
-            $config_upload['remove_spaces'] = true;
+            $config_upload['encrypt_name'] = true;
             
             $images = $_FILES;
             $cpt = count($_FILES['image']['name']);
@@ -68,12 +68,15 @@ class Projects extends CI_Controller {
                 $_FILES['image']['error'] = $images['image']['error'][$i];
                 $_FILES['image']['size'] = $images['image']['size'][$i];    
                 $this->upload->do_upload('image');
+
+                $filename = $this->upload->data()['file_name'];
                 
-                $config_resize['source_image'] = $projectFileFolder.'/'.$images['image']['name'][$i];
+                $config_resize['source_image'] = $projectFileFolder.'/'.$filename;
                 $config_resize['image_library'] = 'gd2';
-                $config_resize['maintain_ratio'] = true;
+                $config_resize['maintain_ratio'] = false;
                 $config_resize['width'] = 540;
                 $config_resize['height'] = 268;
+                //$config_resize['master_dim'] = 'width';
                 
 				$this->image_lib->clear();
    				$this->image_lib->initialize($config_resize);
