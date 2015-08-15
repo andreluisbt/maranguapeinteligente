@@ -69,7 +69,8 @@ class Projects extends CI_Controller {
                 $_FILES['image']['size'] = $images['image']['size'][$i];    
                 $this->upload->do_upload('image');
 
-                $filename = $this->upload->data()['file_name'];
+                $fildata = $this->upload->data();
+                $filename = $fildata['file_name'];
                 
                 $config_resize['source_image'] = $projectFileFolder.'/'.$filename;
                 $config_resize['image_library'] = 'gd2';
