@@ -55,14 +55,14 @@
         
         <ul class="actions">
             <li>
-                <a href="#" class="btn btn-success">
+                <a href="<?php echo site_url('rates/rateUp/'.$project->id)?>" class="btn btn-success">
                     <span class="spin">
                         <i class="fa fa-plus"></i> 1
                     </span>
                 </a>
             </li>
             <li>
-                <a href="#" class="btn btn-danger">
+                <a href="<?php echo site_url('rates/rateDown/'.$project->id)?>" class="btn btn-danger">
                     <span class="spin">
                         <i class="fa fa-minus"></i> 1
                     </span>

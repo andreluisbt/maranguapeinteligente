@@ -91,5 +91,11 @@ class Projects extends CI_Controller {
         
         echo json_encode($response);
     }
+
+    public function actionRateProject(){
+        $this->load->model('ProjectsModel');
+
+    }
+
     
 }
