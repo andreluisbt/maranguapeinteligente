@@ -1,5 +1,7 @@
 <div class="container">
     <?php
+    global $USER;
+    $USER = $this->session->userdata('user');
     foreach($projects as $project) {
     ?>
     <div class="project-item col-md-6">
@@ -53,6 +55,7 @@
             </li>
         </ul>
         
+        <?php if($USER){ ?>
         <ul class="actions">
             <li>
                 <a href="<?php echo site_url('rates/rateUp/'.$project->id)?>" class="btn btn-success">
@@ -69,6 +72,7 @@
                 </a>
             </li>
         </ul>
+        <?php } ?>
         
         <div class="title">
             <a href="#">
