@@ -79,14 +79,14 @@
                         <?php if($USER){ ?>
                         <ul class="actions">
                             <li>
-                                <a href="#" class="btn btn-success">
+                                <a href="#" class="rate-up">
                                     <span class="spin">
                                         <i class="fa fa-plus"></i> 1
                                     </span>
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="btn btn-danger">
+                                <a href="#" class="rate-down">
                                     <span class="spin">
                                         <i class="fa fa-minus"></i> 1
                                     </span>
@@ -94,7 +94,7 @@
                             </li>
                         </ul>
                         <?php } ?>
-                        
+
                         <div class="clearfix"></div>
                     </div>
                     
