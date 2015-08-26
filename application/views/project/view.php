@@ -162,12 +162,14 @@
                         
                     </div> 
                     
+                    <?php if($USER){?>
                     <div class="form-group">
                         <textarea id="textComment" class="form-control" placeholder="Contribuição"></textarea>
                     </div>
                     <div class="text-right">
                         <button class="btn btn-success">Enviar contribuição</button>
                     </div>
+                    <?php } ?>
                       
                 </div>
                 
