@@ -76,6 +76,7 @@
                             </li>
                         </ul>
                         
+                        <?php if($USER){ ?>
                         <ul class="actions">
                             <li>
                                 <a href="#" class="btn btn-success">
@@ -92,6 +93,7 @@
                                 </a>
                             </li>
                         </ul>
+                        <?php } ?>
                         
                         <div class="clearfix"></div>
                     </div>
