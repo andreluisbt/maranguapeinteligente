@@ -5,16 +5,32 @@ class Rates extends CI_Controller {
     public function index(){
 	}
 
-	public function rateUp($project_id){
+
+    public function rateUp($project_id){
+        $this->rate($project_id, 1);
+    }
+
+    public function rateDown($project_id){
+        $this->rate($project_id, 0);
+    }
+
+	public function rate($project_id, $rate){
         $this->load->model('RatesModel');
         
         $response = new stdClass();
-        if($rate_id = $this->RatesModel->toRate($project_id, 1)){
+
+        $rateResult = $this->RatesModel->toRate($project_id, $rate);
+
+        if($rateResult === true){
             $response->result = true;
-            $response->msg = "OK OK OK";
+            $response->class = '';
+        }else if(gettype($rateResult) == 'integer'){
+            $response->result = true;
+            $response->class = 'active';
         }else{
             $response->result = false;
-            $response->msg = "NOK NOK NOK";
+            $response->class = '';
+            $response->msg = "Ops.. tivemos um pequeno problema ao registrar seu voto.";
         }
         
         echo json_encode($response);

@@ -12,10 +12,8 @@
 <script src="<?php echo base_url('lib/jquery.form.min.js');?>"></script>
 
 
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" >
 <link rel="stylesheet/less" type="text/css" href="<?php echo base_url('style/less/app.less');?>" />
-
 <script src="<?php echo base_url('lib/less-2.3.1/less.min.js');?>"></script>
 
 <script>
@@ -30,6 +28,7 @@
 </script>
 
 <script type="text/javascript" src="<?php echo base_url('js/app.js');?>"></script>
+<script type="text/javascript" src="<?php echo base_url('js/projects/project.js');?>"></script>
 
 <?php
 global $USER;

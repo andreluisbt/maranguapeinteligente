@@ -324,6 +324,29 @@ header{
 				margin-left: 5px;
 				background-color: rgba(0, 0, 0, 0.75);
     			color: #fff;
+				display: block;
+
+				&:hover{
+					background-color: @brand-primary;
+				}
+
+				.preload{ 
+					.bar{
+						background-color: #fff;
+					}
+				}
+			}
+
+			a.rate-up{
+				&.active{
+					background-color: @brand-success;
+				}
+			}
+
+			a.rate-down{
+				&.active{
+					background-color: @brand-danger;
+				}
 			}
 		}
 	}

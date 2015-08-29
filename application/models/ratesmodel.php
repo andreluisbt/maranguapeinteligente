@@ -14,18 +14,16 @@ class RatesModel extends CI_Model {
 	}
 
 	public function toRate($projectId, $rt){
-
-		$this->user_id = $this->session->userdata('user');
+		$this->user_id = $this->session->userdata('user')->id;
 		
 		$query = $this->db->get_where("rates", array("user_id"=>$this->user_id, "project_id"=>$projectId, "rate"=>$rt));
-		$rate = $query->row();
+		$haveRateEqual = $query->row();
 
-		if($rate){
-			if($this->db->delete('rates', array('id' => $rate->id))){
-				return true;
-			}else{
-				return false;
-			}
+		$this->db->delete('rates', array("project_id"=>$projectId));
+
+
+		if($haveRateEqual){
+			return true;
 		}else{
 			$this->project_id = $projectId;
 			$this->rate = $rt;
