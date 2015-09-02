@@ -35,5 +35,17 @@ class RatesModel extends CI_Model {
 			}
 		}
 	}
+
+	public function getMyRateByProject($projectId){
+		$myId = $this->session->userdata('user')->id;
+		$query = $this->db->get_where("rates", array("user_id"=>$myId, "project_id"=>$projectId));
+		$rate = $query->row();
+
+		if($rate){
+			return (int)$rate->rate;
+		}else{
+			return false;
+		}
+	}
     
 }

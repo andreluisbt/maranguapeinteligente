@@ -18,6 +18,7 @@ class ProjectsModel extends CI_Model {
     
 	public function get($page = 1, $limit = 10){
 		$this->load->model('UsersModel');
+		$this->load->model('RatesModel');
 		
 		$offset = ($page-1)*$limit;
 		
@@ -27,6 +28,7 @@ class ProjectsModel extends CI_Model {
 		for($i=0; $i<count($projects); $i++){
 			$projects[$i]->owner = $this->UsersModel->get($projects[$i]->owner);
 			$projects[$i]->images = $this->getProjectImages($projects[$i]->id);
+			$projects[$i]->myRate = $this->RatesModel->getMyRateByProject($projects[$i]->id);
 		}
 		
 		return $projects;
@@ -34,10 +36,12 @@ class ProjectsModel extends CI_Model {
 	
 	public function getById($id){
 		$this->load->model('UsersModel');
+		$this->load->model('RatesModel');
 		$query = $this->db->get_where("projects", array("id"=>$id));
         $project = $query->row();
 		$project->owner = $this->UsersModel->get($project->owner);
         $project->images = $this->getProjectImages($project->id);
+        $project->myRate = $this->RatesModel->getMyRateByProject($project->id);
 		
         return $project;
 	}

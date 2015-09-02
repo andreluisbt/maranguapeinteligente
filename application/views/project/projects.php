@@ -55,15 +55,23 @@
             </li>
         </ul>
         
-        <?php if($USER){ ?>
+        <?php if($USER){ 
+            $rateUpClass = '';
+            $rateDownClass = '';  
+            if($project->myRate === 1){
+                $rateUpClass = 'active';
+            }else if($project->myRate === 0){
+                $rateDownClass = 'active';
+            }
+        ?>
         <ul class="actions">
             <li>
-                <a href="<?php echo site_url('rates/rateUp/'.$project->id)?>" class="rate-up">
+                <a href="<?php echo site_url('rates/rateUp/'.$project->id)?>" class="rate-up <?php echo $rateUpClass;?>">
                     <i class="fa fa-plus"></i> 1
                 </a>
             </li>
             <li>
-                <a href="<?php echo site_url('rates/rateDown/'.$project->id)?>"  class="rate-down">
+                <a href="<?php echo site_url('rates/rateDown/'.$project->id)?>"  class="rate-down <?php echo $rateDownClass;?>">
                     <i class="fa fa-minus"></i> 1
                 </a>
             </li>
