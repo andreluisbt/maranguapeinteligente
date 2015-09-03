@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 18-Ago-2015 às 19:08
+-- Generation Time: 03-Set-2015 às 02:25
 -- Versão do servidor: 5.6.25
 -- PHP Version: 5.6.11
 
@@ -19,6 +19,22 @@ SET time_zone = "+00:00";
 --
 -- Database: `maranguapeinte`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `comments`
+--
+
+CREATE TABLE IF NOT EXISTS `comments` (
+  `id` int(11) NOT NULL,
+  `comment` text NOT NULL,
+  `project_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `accepted` int(11) NOT NULL,
+  `timecreated` int(11) NOT NULL,
+  `timeaccepted` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -60,7 +76,7 @@ CREATE TABLE IF NOT EXISTS `rates` (
   `project_id` int(11) NOT NULL,
   `rate` int(11) NOT NULL,
   `timecreated` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=87 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -81,7 +97,7 @@ CREATE TABLE IF NOT EXISTS `sessions` (
 --
 
 INSERT INTO `sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('656fb2bf551d5eecb8ea19484c1fe23d', '::1', 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.155 Safari/537.36', 1439917649, '');
+('9f5aa8990e6ba21e7122f46bddb3dff5', '::1', 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.157 Safari/537.36', 1441238441, 'a:2:{s:9:"user_data";s:0:"";s:4:"user";O:8:"stdClass":11:{s:2:"id";s:2:"50";s:16:"represents_group";s:1:"0";s:10:"group_name";N;s:4:"name";s:11:"André Luis";s:5:"email";s:19:"andreluis@email.com";s:4:"born";s:10:"1980-06-17";s:6:"gender";s:1:"0";s:7:"address";s:31:"Rua Dom Quintino, 276 - Pirambu";s:3:"cpf";s:14:"123.123.123-12";s:5:"image";s:36:"ca8b008c2d019ec53cb43c52841c3d1c.jpg";s:11:"timecreated";s:10:"1439607287";}}');
 
 -- --------------------------------------------------------
 
@@ -117,6 +133,12 @@ INSERT INTO `users` (`id`, `represents_group`, `group_name`, `name`, `email`, `p
 --
 
 --
+-- Indexes for table `comments`
+--
+ALTER TABLE `comments`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `projects`
 --
 ALTER TABLE `projects`
@@ -146,6 +168,11 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `comments`
+--
+ALTER TABLE `comments`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT for table `projects`
 --
 ALTER TABLE `projects`
@@ -154,7 +181,7 @@ ALTER TABLE `projects`
 -- AUTO_INCREMENT for table `rates`
 --
 ALTER TABLE `rates`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=87;
 --
 -- AUTO_INCREMENT for table `users`
 --
