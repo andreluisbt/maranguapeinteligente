@@ -37,6 +37,7 @@ class ProjectsModel extends CI_Model {
 	public function getById($id){
 		$this->load->model('UsersModel');
 		$this->load->model('RatesModel');
+		
 		$query = $this->db->get_where("projects", array("id"=>$id));
         $project = $query->row();
 		$project->owner = $this->UsersModel->get($project->owner);
