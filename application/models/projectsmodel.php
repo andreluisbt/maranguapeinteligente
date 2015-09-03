@@ -28,7 +28,9 @@ class ProjectsModel extends CI_Model {
 		for($i=0; $i<count($projects); $i++){
 			$projects[$i]->owner = $this->UsersModel->get($projects[$i]->owner);
 			$projects[$i]->images = $this->getProjectImages($projects[$i]->id);
-			$projects[$i]->myRate = $this->RatesModel->getMyRateByProject($projects[$i]->id);
+			if($this->session->userdata('user')){
+				$projects[$i]->myRate = $this->RatesModel->getMyRateByProject($projects[$i]->id);
+			}
 		}
 		
 		return $projects;
