@@ -31,7 +31,8 @@ class Users extends CI_Controller {
         	    $this->load->library('upload', $config_upload);
                 
                 $this->upload->do_upload('image');
-                $filename = $this->upload->data()['file_name'];
+                $filename = $this->upload->data();
+                $filename = $filename['file_name'];
 
                 $config_resize['source_image'] = $usersFileFolder.'/'.$filename;
                 $config_resize['image_library'] = 'gd2';
