@@ -24,7 +24,6 @@ class App extends CI_Controller {
         $this->load->view('project/projects', $pageData);
 	}
 	
-    
     public function actionLogin(){
         $this->load->model('UsersModel');
         

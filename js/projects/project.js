@@ -18,9 +18,17 @@ $(document).ready(function() {
 
 			}
 		});
-		
-
-
 	});
+
+	$.ajax({
+		url : site_url('comments/showComments/63'),
+		beforeSend: function(){
+			$('#viewProject .comments').append(preload)
+		},
+		success: function(data){
+			$('#viewProject .comments').html(data);
+		}
+	});
+
 });
 

@@ -21,7 +21,6 @@ class RatesModel extends CI_Model {
 
 		$this->db->delete('rates', array("project_id"=>$projectId));
 
-
 		if($haveRateEqual){
 			return true;
 		}else{

@@ -10,9 +10,9 @@ class Comments extends CI_Controller {
         
         $pageData = array();
         $pageData['commmentPage'] = $page+1;
-        $pageData['commments'] = $this->CommentsModel->get($project_id, $page);
-        
-        if(count($pageData['commments']) == 10){
+        $pageData['comments'] = $this->CommentsModel->get($project_id, $page);
+
+        if(count($pageData['comments']) == 10){
             $pageData['haveMore'] = true;
         }else{
             $pageData['haveMore'] = false;

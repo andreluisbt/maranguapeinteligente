@@ -24,7 +24,7 @@ class CommentsModel extends CI_Model {
         $comments = $query->result();
 		
 		for($i=0; $i<count($comments); $i++){
-			$comments[$i]->owner = $this->UsersModel->get($comments[$i]->owner);
+			$comments[$i]->owner = $this->UsersModel->get($comments[$i]->user_id);
 		}
 		
 		return $comments;

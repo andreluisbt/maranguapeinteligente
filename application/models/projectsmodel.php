@@ -44,8 +44,9 @@ class ProjectsModel extends CI_Model {
         $project = $query->row();
 		$project->owner = $this->UsersModel->get($project->owner);
         $project->images = $this->getProjectImages($project->id);
-        $project->myRate = $this->RatesModel->getMyRateByProject($project->id);
-		
+        if($this->session->userdata('user')){
+        	$project->myRate = $this->RatesModel->getMyRateByProject($project->id);
+		}
         return $project;
 	}
 
