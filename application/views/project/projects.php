@@ -97,11 +97,8 @@
         }else{
             $printClearfix = true;
         }
-
     }
     ?>
-
-
     
 </div>
 

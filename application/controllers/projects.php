@@ -27,6 +27,8 @@ class Projects extends CI_Controller {
         
         $pageData = array();
         
+        $this->session->set_userdata(array('projectId'=>$id)); 
+
         $this->load->model('ProjectsModel');
         $project = $this->ProjectsModel->getById($id);
         

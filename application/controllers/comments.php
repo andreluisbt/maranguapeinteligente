@@ -5,12 +5,14 @@ class Comments extends CI_Controller {
     public function index(){
 	}
 
-    public function showComments($project_id, $page=1){
+    public function showComments($page=1){
         $this->load->model('CommentsModel');
         
+        $projectId = $this->session->userdata('projectId');
+
         $pageData = array();
         $pageData['commmentPage'] = $page+1;
-        $pageData['comments'] = $this->CommentsModel->get($project_id, $page);
+        $pageData['comments'] = $this->CommentsModel->get($projectId, $page);
 
         if(count($pageData['comments']) == 10){
             $pageData['haveMore'] = true;

@@ -19,7 +19,7 @@ $(document).ready(function() {
 	});
 
 	$.ajax({
-		url : site_url('comments/showComments/63'),
+		url : site_url('comments/showComments'),
 		beforeSend: function(){
 			$('#viewProject .comments').append(preload)
 		},
@@ -33,13 +33,13 @@ $(document).ready(function() {
 		var commentPage = $(this).data('comment-page');
 		$(this).parent().remove();
 		$.ajax({
-			url : site_url('comments/showComments/'+projectPage),
+			url : site_url('comments/showComments/'+commentPage),
 			beforeSend: function(){
 				$('#sectionViewProject #wrapShowMore').html(preload);
 			},
 			success: function(data){
 				$('#sectionViewProject #wrapShowMore .preload').remove();
-				$('#sectionViewProject #wrapShowMore').append(data);
+				$('#sectionViewProject .comments').append(data);
 			}
 		});
 	});
