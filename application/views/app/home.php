@@ -6,6 +6,9 @@
     	global $USER; 
     	$this->load->view('app/components/head');
     	?>
+
+        <script type="text/javascript" src="<?php echo base_url('js/home.js');?>"></script>
+
     </head>
     <body id="<?php echo $page;?>">
         <header class="<?php echo ($USER?'logged':''); ?>">

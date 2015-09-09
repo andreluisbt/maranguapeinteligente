@@ -2,6 +2,8 @@
     <?php
     global $USER;
     $USER = $this->session->userdata('user');
+
+    $printClearfix = false;
     foreach($projects as $project) {
     ?>
     <div class="project-item col-md-6">
@@ -87,12 +89,24 @@
         <div class="clearfix"></div>
     </div>
     
-    <?php }?>
+    <?php 
+
+        if($printClearfix){
+            echo '<div class="clearfix"></div>';
+            $printClearfix = false;
+        }else{
+            $printClearfix = true;
+        }
+
+    }
+    ?>
+
+
     
 </div>
 
 <?php if($haveMore){?>
 <div class="text-center">
-    <a href="#" data-project-page="<?php echo $projectPage;?>" class="load-more btn btn-primary">Mostrar mais</a>
+    <a href="#" data-project-page="<?php echo $projectPage;?>" class="show-more btn btn-primary">Mostrar mais</a>
 </div>
 <?php }?>  

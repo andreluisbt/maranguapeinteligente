@@ -24,8 +24,8 @@ if(isset($comments) > 0){
 }
 
 if($haveMore){
-    echo '<div class="text-center">
-            <button class="show-more btn btn-default">Mais comentarios</button>
+    echo '<div id="wrapShowMore" class="text-center">
+            <button data-comment-page="'.$commmentPage.'" class="show-more btn btn-default">Mais comentarios</button>
         </div>';
 }
 ?>

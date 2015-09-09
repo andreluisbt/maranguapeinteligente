@@ -22,17 +22,8 @@ $(document).ready(function() {
 	
     $('.carousel').carousel();
 
-	$.ajax({
-		url : site_url('app/showAllProjects'),
-		beforeSend: function(){
-			$('#home #sectionProjects').append(preload)
-		},
-		success: function(data){
-			$('#home #sectionProjects').html(data);
-		}
-	});
 
-	$('#sectionProjects').on('click', '.load-more', function(e){
+	$('#sectionProjects').on('click', '.show-more', function(e){
 		e.preventDefault();
 		var projectPage = $(this).data('projectPage');
 		$(this).parent().remove();
