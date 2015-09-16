@@ -31,12 +31,11 @@ class CommentsModel extends CI_Model {
 	}
 	
 
-	public function toComment($project_id){
+	public function toComment($projectId){
 		
-		$this->comment = $comment;
+        $this->comment = $this->input->post('comment');
 		$this->user_id = $this->session->userdata('user')->id;
-        $this->project_id = $project_id;
-        $this->title = $this->input->post('title');
+        $this->project_id = $projectId;
         $this->accepted = 0;
         $this->timecreated = time();
         $this->timeaccepted = 0;

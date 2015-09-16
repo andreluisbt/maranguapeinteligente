@@ -44,5 +44,46 @@ $(document).ready(function() {
 		});
 	});
 
+	/*
+	$('#sectionViewProject').on('click', '#btnSendComment', function(e){
+		e.preventDefault();
+		var projectId = $(this).data('projectId');
+		//$(this).parent().remove();
+		$.ajax({
+			url : site_url('comments/addComment/'+projectId),
+			type: 'post',
+			dataType: 'json',
+			data: {comment: $('#textComment').val()},
+			beforeSend: function(){
+				$('#textComment').attr('disabled', 'disabled');
+				$('#btnSendComment').html(preload).attr('disabled', 'disabled');
+			},
+			success: function(data){
+				//$('#sectionViewProject #wrapShowMore .preload').remove();
+				//$('#sectionViewProject .comments').append(data);
+			}
+		});
+	});
+	*/
+
+	formValidationAjax($('#formComment'));
 });
 
+commentBeforeSubmit = function(formData, $form, options){
+	$form.find('.msgs').removeClass('success error')
+							.html('');
+
+	$form.find('textarea').attr('disabled', 'disabled');
+	$form.find('button[type="submit"]').html(preload).attr('disabled', 'disabled');
+};
+
+commentSuccess = function(response, status, xhr, $form){
+	$form.find('button[type="submit"]').html('Enviar contribuição').removeAttr('disabled');
+	$form.find('textarea').removeAttr('disabled');
+	
+	if(response.result){
+		$form.find('.msgs').html(response.msg).addClass('success');
+	}else{
+		$form.find('.msgs').html(response.msg).addClass('error');
+	}
+};

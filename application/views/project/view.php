@@ -109,20 +109,18 @@
                 </div>
                 
                 <div class="col-md-6">
-                    <div class="comments">
-                        asdasdasdasdasdasdas
-                        asdasdasdadasd
-                        asdasdas
-                        
-                    </div> 
-                    
+                    <div class="comments"></div> 
                     <?php if($USER){?>
-                    <div class="form-group">
-                        <textarea id="textComment" class="form-control" placeholder="Contribuição"></textarea>
-                    </div>
-                    <div class="text-right">
-                        <button class="btn btn-success">Enviar contribuição</button>
-                    </div>
+
+                    <form id="formComment" class="form-inline" method="post" data-before-submit="commentBeforeSubmit" data-success="commentSuccess" action="<?php echo site_url('comments/actionAddProject/'.$project->id); ?>"> 
+                        <div class="msgs text-center"></div>
+                        <div>
+                            <textarea id="textComment" name="comment" class="form-control required" minlength="5" placeholder="Contribuição" ></textarea>
+                        </div>
+                        <div class="text-right">
+                            <button type="submit" id="btnSendComment" class="btn btn-success" data-project-id="<?php echo $project->id;?>">Enviar contribuição</button>
+                        </div>
+                    </form>
                     <?php } ?>
                       
                 </div>

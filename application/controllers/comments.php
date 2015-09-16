@@ -23,6 +23,20 @@ class Comments extends CI_Controller {
         $this->load->view('comment/project_comment', $pageData);
     }
 
+    public function actionAddProject($projectId){
+        $this->load->model('CommentsModel');
+        
+        $response = new stdClass();
+        if($commentsId = $this->CommentsModel->toComment($projectId)){
+            $response->result = true;
+            $response->msg = "Sua contribuição foi enviada ao autor desse projeto para analise.";
+        }else{
+            $response->result = true;
+            $response->msg = "Houve um problema ao registrar sua contribuição para o projeto";
+        }
+        echo json_encode($response);
+    }
+
     /*
     public function actionNewProject(){
         $this->load->model('ProjectsModel');

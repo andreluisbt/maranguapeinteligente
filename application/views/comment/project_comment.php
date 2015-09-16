@@ -2,7 +2,7 @@
 global $USER;
 $USER = $this->session->userdata('user');
 
-if(isset($comments) > 0){ 
+if(count($comments) > 0){ 
     foreach($comments as $comment) {
         echo '<div class="comment">
                 <div>
