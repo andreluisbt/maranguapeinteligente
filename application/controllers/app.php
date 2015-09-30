@@ -8,12 +8,12 @@ class App extends CI_Controller {
         $this->load->view('app/home', $pageData);
 	}
 	
-	public function showAllProjects($page=1){
+	public function showAllProjects($page=1, $order="date"){
     	$this->load->model('ProjectsModel');
         
         $pageData = array();
         $pageData['projectPage'] = $page+1;
-        $pageData['projects'] = $this->ProjectsModel->get($page);
+        $pageData['projects'] = $this->ProjectsModel->get($page, 10, $order);
 		
         if(count($pageData['projects']) == 10){
             $pageData['haveMore'] = true;

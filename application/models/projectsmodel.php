@@ -16,11 +16,13 @@ class ProjectsModel extends CI_Model {
 		parent::__construct();
 	}
     
-	public function get($page = 1, $limit = 10){
+	public function get($page = 1, $limit = 10, $order = "date"){
 		$this->load->model('UsersModel');
 		$this->load->model('RatesModel');
 		
 		$offset = ($page-1)*$limit;
+		
+		$this->db->order_by($order);
 		
 		$query = $this->db->get('projects', $limit, $offset);
         $projects = $query->result();

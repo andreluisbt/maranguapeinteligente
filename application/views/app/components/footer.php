@@ -2,8 +2,9 @@
     <div>
         <img src="<?php echo base_url('img/logo-footer.png'); ?>">
     </div>
-    <div>
-        © 2015 Maranguape Inteligente. Todos os direiros reservados
+    <div class="col-md-8 col-md-offset-2">
+        <!-- © 2015 Maranguape Inteligente. Todos os direiros reservados -->
+        Esta plataforma é uma iniciativa do Programa de Pós Graduação em Administração da UECE (PPGA/UECE - Mestrado e Doutorado) e do Projeto de Pesquisa Gestão Inteligente de Cidades.
     </div>
 </footer>
 

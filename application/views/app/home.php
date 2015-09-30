@@ -22,7 +22,9 @@
                 if(!$USER){
                 ?>
                 <div class="text hidden-xs col-md-10 col-md-offset-1">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    Bem vindo a plataforma de participação popular digital,  aqui você poderá propor uma ideia de projeto para sua cidade, contribuir com a ideia de outras pessoas e votar contra ou a favor de uma ideia.   
+                    <br/>
+                    Participe.
                 </div>
                 <?php 
                 }
@@ -30,19 +32,19 @@
                 <div class="filters">
                     <ul>
                         <li>
-                            <a href="#">
+                            <a id="orderLast" href="#" class="active">
                                 <i class="fa fa-clock-o"></i>
-                                <div>Últimas</div>
+                                <div>Últimos</div>
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a id="orderRank" href="#">
                                 <i class="fa fa-trophy"></i>
                                 <div>Ranking</div>
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a id="orderCategory" href="#">
                                 <i class="fa fa-tags"></i>
                                 <div>Categorias</div>
                             </a>
