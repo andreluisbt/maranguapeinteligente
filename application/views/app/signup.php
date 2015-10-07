@@ -73,6 +73,20 @@
 			<label for="cpf">Foto</label>
 			<input type="file" id="image" name="image" class="form-control required" >
 		</div>
+		<div class="form-group">
+			<input type="checkbox" id="therms" name="therms" class="required"> Eu concordo
+			<br>
+			<label id="therms-error" class="error" style="display: none;" for="therms"></label>
+			<ul class="therms">
+				<li>
+					As ideias e contribuições postadas neste site serão de responsabilidade de quem as postou e as mesmas passam a ser de domínio público, podendo ser usadas por outras pessoas e organizações públicas e privadas;
+				</li>
+				<li>
+					As postagens que forem consideradas pelo gestor da plataforma como: i) ofensivas à pessoas e/ou instituições; ii) fora do escopo de proposições para a cidade de Maranguape; iii) não tenham sentido e nem possam ser compreensíveis como proposta, serão
+				</li>
+			</ul>
+
+		</div>
 	</form>
 </div>
 <div class="modal-footer">

@@ -22,9 +22,12 @@ class ProjectsModel extends CI_Model {
 		
 		$offset = ($page-1)*$limit;
 		
-		$this->db->order_by($order);
+		if($order == "rate_up")
+			$this->db->order_by($order, 'desc');
+		else
+			$this->db->order_by($order);
 		
-		$query = $this->db->get('projects', $limit, $offset);
+		$query = $this->db->get('view_projects', $limit, $offset);
         $projects = $query->result();
 		
 		for($i=0; $i<count($projects); $i++){
@@ -42,7 +45,7 @@ class ProjectsModel extends CI_Model {
 		$this->load->model('UsersModel');
 		$this->load->model('RatesModel');
 		
-		$query = $this->db->get_where("projects", array("id"=>$id));
+		$query = $this->db->get_where("view_projects", array("id"=>$id));
         $project = $query->row();
 		$project->owner = $this->UsersModel->get($project->owner);
         $project->images = $this->getProjectImages($project->id);
@@ -68,7 +71,7 @@ class ProjectsModel extends CI_Model {
     }
     
 	public function getByOwnerId($ownerId){
-		$query = $this->db->get_where("projects", array("owner"=>$ownerId));
+		$query = $this->db->get_where("view_projects", array("owner"=>$ownerId));
         return $query->result();
 	}
 	

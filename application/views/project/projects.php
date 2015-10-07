@@ -50,10 +50,10 @@
         
         <ul class="count-likes">
             <li>
-                31<i class="fa fa-plus-circle"></i>
+                <?php echo $project->rate_up;?><i class="fa fa-plus-circle"></i>
             </li>
             <li>
-                <i class="fa fa-minus-circle"></i>75
+                <i class="fa fa-minus-circle"></i><?php echo $project->rate_down;?>
             </li>
         </ul>
         

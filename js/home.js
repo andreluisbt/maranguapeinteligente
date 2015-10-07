@@ -3,7 +3,7 @@ $(document).ready(function() {
 	$('#orderLast').click(function(e){
 		e.preventDefault();
 
-		$('#orderLast, #orderCategory').removeClass('active');
+		$('#orderRank, #orderCategory').removeClass('active');
 		$(this).addClass('active');
 		$.ajax({
 			url : site_url('app/showAllProjects/1/date'),
@@ -15,6 +15,23 @@ $(document).ready(function() {
 			}
 		});		
 	});
+
+	$('#orderRank').click(function(e){
+		e.preventDefault();
+
+		$('#orderLast, #orderCategory').removeClass('active');
+		$(this).addClass('active');
+		$.ajax({
+			url : site_url('app/showAllProjects/1/rate_up'),
+			beforeSend: function(){
+				$('#home #sectionProjects').html(preload);
+			},
+			success: function(data){
+				$('#home #sectionProjects').html(data);
+			}
+		});		
+	});
+
 
 	$('#orderCategory').click(function(e){
 		e.preventDefault();
