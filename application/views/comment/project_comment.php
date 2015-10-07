@@ -18,9 +18,9 @@ if(count($comments) > 0){
             </div>';
     }
 }else if($USER){
-    echo '<div>Seja o primeiro a contribuir!</div>';
+    echo '<div class="alert alert-info text-center" role="alert">Seja o primeiro a contribuir!</div>';
 }else{
-    echo '<div>Nenhuma contibuição</div>';
+    echo '<div class="alert alert-info text-center" role="alert">Nenhuma contibuição</div>';
 }
 
 if($haveMore){
